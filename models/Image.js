@@ -13,6 +13,9 @@ Image.init(
     },
     multimedia_url: {
       type: DataTypes.STRING,
+      validate: {
+        isUrl: true,
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
