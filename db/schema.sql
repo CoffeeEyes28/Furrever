@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS furrever_db;
+CREATE DATABASE furrever_db;
