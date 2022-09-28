@@ -1,3 +1,4 @@
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -124,3 +125,6 @@ Profile.init(
 );
 
 module.exports = Profile;
+
+
+
