@@ -20,7 +20,7 @@ Image.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'image',
+        model: 'users',
         key: 'id',
       },
     },
