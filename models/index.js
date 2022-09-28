@@ -14,7 +14,7 @@ Users.hasMany(Post,{
 
 Users.hasOne(Image,{
     foreignKey: 'user_id'
-})
+});
 
 Profile.belongsTo(Users,{
     foreignKey: 'user_id'
