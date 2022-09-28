@@ -1,5 +1,28 @@
 const router = require('express').Router();
+const { Users } = require('../../models');
 
-const { Profile, Users} = require('../models');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;

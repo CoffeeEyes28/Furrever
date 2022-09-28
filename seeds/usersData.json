@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Monica",
+        "email": "monica2@gmail.com",
+        "password": "Password123",
+        "is_admin": true
+    },
+    {
+        "name": "Stephy",
+        "email": "stephy2@gmail.com",
+        "password": "Password456",
+        "is_admin": false
+    }
+]
