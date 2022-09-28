@@ -86,7 +86,7 @@ Profile.init(
             allowNull: false,
 
         },
-        vaxxed: {
+        vaxed: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
 
@@ -99,7 +99,7 @@ Profile.init(
             }
 
         },
-        adopt_me: {
+        adopt_me_url: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
