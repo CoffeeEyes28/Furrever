@@ -2,14 +2,29 @@ const router = require('express').Router();
 const { Profile } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// get all products
+router.get('/', async (req, res) => {
+    // find all products
+    // be sure to include its associated Category and Tag data
+    try{
+      const productData = await Product.findAll({
+        include: [{ model: Category }, { model: Tag}],
+      });
+      res.status(200).json(productData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newProject = await Project.create({
+    const newProject = await Profile.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newProfile);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -17,19 +32,19 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const profileData = await Profile.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!projectData) {
+    if (!profileData) {
       res.status(404).json({ message: 'No project found with this id!' });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(profileData);
   } catch (err) {
     res.status(500).json(err);
   }
