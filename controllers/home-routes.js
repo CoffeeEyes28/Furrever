@@ -2,52 +2,59 @@ const router = require('express').Router();
 const { Users, Profile } = require('../models');
 // const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
-  try {
-    // Get all users and JOIN with user data
-    const usersData = await Users.findAll({
-      include: [
-        {
-          model: Users,
-          attributes: ['name', 'picture'],
-        },
-      ],
-    });
-
-    // Serialize data so the template can read it
-    const users = userstData.map((users) => users.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      users, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+router.get('/', (req, res) => {
+  // TODO: Add a comment describing the functionality of this method
+  Users.findAll().then((usersData) => {
+    res.json(usersData);
+  });
 });
 
-router.get('/profile/:id', async (req, res) => {
-  try {
-    const usersData = await Users.findByPk(req.params.id, {
-      include: [
-        {
-          model: Users,
-          attributes: ['name', 'picture'],
-        },
-      ],
-    });
+// router.get('/', async (req, res) => {
+//   try {
+//     // Get all users and JOIN with user data
+//     const usersData = await Users.findAll({
+//       include: [
+//         {
+//           model: Users,
+//           attributes: ['name', 'picture'],
+//         },
+//       ],
+//     });
 
-    const users = userstData.get({ plain: true });
+//     // Serialize data so the template can read it
+//     const users = userstData.map((users) => users.get({ plain: true }));
 
-    res.render('users', {
-      ...profile,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     // Pass serialized data and session flag into template
+//     res.render('home', { 
+//       users, 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// router.get('/profile/:id', async (req, res) => {
+//   try {
+//     const usersData = await Users.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Users,
+//           attributes: ['name', 'picture'],
+//         },
+//       ],
+//     });
+
+//     const users = userstData.get({ plain: true });
+
+//     res.render('users', {
+//       ...profile,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // Use withAuth middleware to prevent access to route
 // router.get('/profile', withAuth, async (req, res) => {
