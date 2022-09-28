@@ -11,7 +11,7 @@ Profile.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        animal_type:{
+        animal_type: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -40,20 +40,7 @@ Profile.init(
             }
 
         },
-        kids: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },
-        dog: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
 
-        },
-        cat: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-
-        },
         furry_family: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -77,6 +64,20 @@ Profile.init(
             validate: {
                 len: [3, 400],
             }
+
+        },
+        kids: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        dog: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+
+        },
+        cat: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
 
         },
         neutered_spayed: {
