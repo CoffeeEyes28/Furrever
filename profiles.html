@@ -9,42 +9,245 @@
 </head>
 
 <body>
+  <!-- Our Banner -->
   <section class="hero">
     <img src="./images/banner.jpg" alt="banner" width="100%">
     <div class="hero-body">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item is-size-2">
+              Welcome, Furrever Member! Please Create Your Profile Here!
+            </a>
+            </div>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-light">
+                  <strong>Home</strong>
+                </a>
+                <a class="button has-background-info-dark has-text-white">
+                  <strong>Furrever Members Only</strong>
+                </a>
+                <a class="button is-light">
+                  <strong>Shelter | Admin Only</strong>
+                </a>
+                <a class="button is-light">
+                  <strong>Log Out</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
   </section>
-  <div class="tile is-ancestor">
+  <!-- NavBar -->
+  
+     
+      <!-- All Tiles -->
+      <div class="tile is-ancestor">
 
-    <div class="tile is-vertical is-7">
-      <div class="tile">
-        <!-- don't delete this is the left tile! -->
-        <div class="tile is-parent is-vertical">
+        <div class="tile is-vertical is-7">
+          <div class="tile">
+            <!-- don't delete this is the left tile! -->
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-neutral">
+                <br>
+                <div class="field is-horizontal">
+                  <div class="field-label">
+                    <label class="label has-text-left">I am a:</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field is-narrow">
+                      <div class="control">
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          Cat
+                        </label>
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          Dog
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label has-text-left">My Name:</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                      <p class="control is-expanded">
+                        <input class="input" type="text" placeholder="Name">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-user"></i>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label has-text-left">My Age:</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field is-narrow">
+                      <div class="control">
+                        <div class="select is-fullwidth">
+                          <select>
+                            <option>0-1 year old</option>
+                            <option>1 year old</option>
+                            <option>2-5 years old</option>
+                            <option>58 years old</option>
+                            <option>8-11 years old</option>
+                            <option>11-14 years old</option>
+                            <option>14-18 years old</option>
+                            <option>18+ years old</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label has-text-left">My Breed:</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field is-narrow">
+                      <div class="control">
+                        <div class="select is-fullwidth">
+                          <select>
+                            <option>Grab from Database</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="field is-horizontal">
+                  <div class="field-label is-normal">
+                    <label class="label has-text-left">Personality:</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field">
+                      <p class="control is-expanded">
+                        <input class="input" type="text" placeholder="Personality">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-user"></i>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="field is-horizontal">
+                  <div class="field-label">
+                    <label class="label has-text-left">I get along with other dogs:</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field is-narrow">
+                      <div class="control">
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          Yes
+                        </label><br>
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          No
+                        </label><br>
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          Unknown
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="field is-horizontal">
+                  <div class="field-label">
+                    <label class="label has-text-left">I get along with other cats:</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field is-narrow">
+                      <div class="control">
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          Yes
+                        </label><br>
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          No
+                        </label><br>
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          Unknown
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="field is-horizontal">
+                  <div class="field-label">
+                    <label class="label has-text-left">I get along with other cats:</label>
+                  </div>
+                  <div class="field-body">
+                    <div class="field is-narrow">
+                      <div class="control">
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          Yes
+                        </label><br>
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          No
+                        </label><br>
+                        <label class="radio">
+                          <input type="radio" name="member">
+                          Unknown
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- don't delete this is the middle tile! -->
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-neutral">
+                <figure class="image is-2by3">
+                  <img src="./images/Sample1.jpg">
+                </figure><br>
+                <div class="adoption">
+                  <p class="has-text-centered"><strong>Are you interested in adopting me?</strong><br>Please contact the
+                    Shelter for application and further inquiries</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <!-- don't delete this is the right tile! -->
+        <div class="tile is-parent">
           <article class="tile is-child notification is-neutral">
             <br>
             <div class="field is-horizontal">
-              <div class="field-label">
-                <label class="label has-text-left">I am a:</label>
-              </div>
-              <div class="field-body">
-                <div class="field is-narrow">
-                  <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="member">
-                      Cat
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="member">
-                      Dog
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br>
-            <div class="field is-horizontal">
               <div class="field-label is-normal">
-                <label class="label has-text-left">My Name:</label>
+                <label class="label has-text-left">My Furry Friends/<br>Family Members are called:</label>
               </div>
               <div class="field-body">
                 <div class="field">
@@ -57,56 +260,31 @@
                 </div>
               </div>
             </div>
-            <div class="field is-horizontal">
-              <div class="field-label is-normal">
-                <label class="label has-text-left">My Age:</label>
-              </div>
-              <div class="field-body">
-                <div class="field is-narrow">
-                  <div class="control">
-                    <div class="select is-fullwidth">
-                      <select>
-                        <option>0-1 year old</option>
-                        <option>1 year old</option>
-                        <option>2-5 years old</option>
-                        <option>58 years old</option>
-                        <option>8-11 years old</option>
-                        <option>11-14 years old</option>
-                        <option>14-18 years old</option>
-                        <option>18+ years old</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <br>
             <div class="field is-horizontal">
               <div class="field-label is-normal">
-                <label class="label has-text-left">My Breed:</label>
-              </div>
-              <div class="field-body">
-                <div class="field is-narrow">
-                  <div class="control">
-                    <div class="select is-fullwidth">
-                      <select>
-                        <option>Grab from Database</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br>
-            <div class="field is-horizontal">
-              <div class="field-label is-normal">
-                <label class="label has-text-left">Personality:</label>
+                <label class="label has-text-left">Email Address:</label>
               </div>
               <div class="field-body">
                 <div class="field">
                   <p class="control is-expanded">
-                    <input class="input" type="text" placeholder="Personality">
+                    <input class="input" type="text" placeholder="Email">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label has-text-left">Fostered Since:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="Date">
                     <span class="icon is-small is-left">
                       <i class="fas fa-user"></i>
                     </span>
@@ -116,7 +294,7 @@
             </div>
             <div class="field is-horizontal">
               <div class="field-label">
-                <label class="label has-text-left">I get along with other dogs:</label>
+                <label class="label has-text-left">I am<br>neutered/<br>spayed:</label>
               </div>
               <div class="field-body">
                 <div class="field is-narrow">
@@ -140,7 +318,7 @@
             <br>
             <div class="field is-horizontal">
               <div class="field-label">
-                <label class="label has-text-left">I get along with other cats:</label>
+                <label class="label has-text-left">I am<br>vaccinated:</label>
               </div>
               <div class="field-body">
                 <div class="field is-narrow">
@@ -163,209 +341,71 @@
             </div>
             <br>
             <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label has-text-left">My Diet:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="Diet">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="field is-horizontal">
               <div class="field-label">
-                <label class="label has-text-left">I get along with other cats:</label>
+                <label class="label has-text-left">These are my faves:</label>
               </div>
               <div class="field-body">
                 <div class="field is-narrow">
                   <div class="control">
                     <label class="radio">
                       <input type="radio" name="member">
-                      Yes
+                      Toys
                     </label><br>
                     <label class="radio">
                       <input type="radio" name="member">
-                      No
+                      Bedding
                     </label><br>
                     <label class="radio">
                       <input type="radio" name="member">
-                      Unknown
+                      Activities
                     </label>
                   </div>
                 </div>
               </div>
             </div>
-          </article>
-        </div>
-        <!-- don't delete this is the middle tile! -->
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-neutral">
-            <figure class="image is-2by3">
-              <img src="./images/Sample1.jpg">
-            </figure><br>
-            <div class="adoption">
-              <p class="has-text-centered"><strong>Are you interested in adopting me?</strong><br>Please contact the
-                Shelter for application and further inquiries</p>
+            <br>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label has-text-left">Activity<br>Description:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <p class="control is-expanded">
+                    <input class="input" type="text" placeholder="Description">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
             </div>
-          </article>
+
         </div>
+        </article>
       </div>
     </div>
-    <!-- don't delete this is the right tile! -->
-    <div class="tile is-parent">
-      <article class="tile is-child notification is-neutral">
-        <br>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label has-text-left">My Furry Friends/<br>Family Members are called:</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control is-expanded">
-                <input class="input" type="text" placeholder="Name">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label has-text-left">Email Address:</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control is-expanded">
-                <input class="input" type="text" placeholder="Email">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label has-text-left">Fostered Since:</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control is-expanded">
-                <input class="input" type="text" placeholder="Date">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label has-text-left">I am<br>neutered/<br>spayed:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                <label class="radio">
-                  <input type="radio" name="member">
-                  Yes
-                </label><br>
-                <label class="radio">
-                  <input type="radio" name="member">
-                  No
-                </label><br>
-                <label class="radio">
-                  <input type="radio" name="member">
-                  Unknown
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label has-text-left">I am<br>vaccinated:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                <label class="radio">
-                  <input type="radio" name="member">
-                  Yes
-                </label><br>
-                <label class="radio">
-                  <input type="radio" name="member">
-                  No
-                </label><br>
-                <label class="radio">
-                  <input type="radio" name="member">
-                  Unknown
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label has-text-left">My Diet:</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control is-expanded">
-                <input class="input" type="text" placeholder="Diet">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label has-text-left">These are my faves:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                <label class="radio">
-                  <input type="radio" name="member">
-                  Toys
-                </label><br>
-                <label class="radio">
-                  <input type="radio" name="member">
-                  Bedding
-                </label><br>
-                <label class="radio">
-                  <input type="radio" name="member">
-                  Activities
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label has-text-left">Activity<br>Description:</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control is-expanded">
-                <input class="input" type="text" placeholder="Description">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-user"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-    </div>
-    </article>
-  </div>
-  </div>
 
 
 
 
-  </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./profiles.js"></script>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./profiles.js"></script>
 </body>
 
 </html>
