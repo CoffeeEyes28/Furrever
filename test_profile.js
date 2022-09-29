@@ -15,31 +15,29 @@ var questionnaire = [
     $(".vaxed"),
     $("#diet"),
     $("#i_love")
-    
 ]
 // To keep all local storage items after refreshing page
 $(document).ready(function () {
-    $("#create_profile").on("click", function () {
+    $("#create_profile").on("submit", function (event) {
+        event.preventDefault();
+        let savedAnswerValue=[];
         for (i = 0; i < questionnaire.length; i++) {
-            let answerValue = i;
-            localStorage.setItem(answerValue, JSON.stringify(questionnaire.val));
-            console.log(questionnaire.val);
+        //    questionnaire[i].first().val();
+           savedAnswerValue.push(questionnaire[i].first().val())
+            // console.log(questionnaire.val);
         }
+        console.log(savedAnswerValue)
     })
 })
 // To keep all local storage items after refreshing page
-$(document).ready(function () {
-    for (i = 0; i < questionnaire.length; i++) {
-        let answerValue = i;
-        var savedAnswerValue = localStorage.getItem(answerValue);
-        if (savedAnswerValue == null) {
-            savedAnswerValue = "";
-        } else {
-            savedAnswerValue = JSON.parse(savedAnswerValue);
-        };
-        questionnaire[i].val(savedAnswerValue);
-    }
-})
+// $(document).ready(function () {
+//     for (i = 0; i < questionnaire.length; i++) {
+//         let answerValue = i;
+//         var savedAnswerValue = localStorage.getItem(answerValue);
+//         console.log(savedAnswerValue);
+//         questionnaire[i].val(savedAnswerValue);
+//     }
+// })
 
 // 2. if input type = radio or selection from form....
 
