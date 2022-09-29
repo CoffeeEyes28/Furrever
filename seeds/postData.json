@@ -1,0 +1,19 @@
+[
+    {
+        "caption": "I love playing with my ball",
+        "user_id": 1
+    },
+    {
+        "caption": "I only barked once today!",
+        "user_id": 1
+    },
+    {
+        "caption": "Went to the vet today, not happy!",
+        "user_id": 2
+        
+    },
+    {
+        "caption": "Got a new scratching post today", 
+        "user_id": 2
+    }
+]
