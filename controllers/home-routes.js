@@ -2,31 +2,64 @@ const router = require('express').Router();
 const { Users, Profile, Post } = require('../models');
 // const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
-  Profile.findAll({
-    attributes: {
-      exclude: [
-      'animal_type', 
-      'age', 
-      'breed_mix', 
-      'personality_quirks', 
-      'furry_family', 
-      'date_fostered',
-      'email',
-      'diet',
-      'kids',
-      'dog',
-      'cat',
-      'neutered_spayed',
-      'vaxed',
-      'i_love',
-      'adopt_me_url',
-    ]
-    }
-  }).then((profileData) => {
-  res.json(profileData);
-  });
+router.get('/', async (req, res) => {
+  try {
+    const animal_profiles = await Profile.findAll({
+      attributes: {
+        exclude: [
+          'animal_type', 
+          'age', 
+          'breed_mix', 
+          'personality_quirks', 
+          'furry_family', 
+          'date_fostered',
+          'email',
+          'diet',
+          'kids',
+          'dog',
+          'cat',
+          'neutered_spayed',
+          'vaxed',
+          'i_love',
+          'adopt_me_url',
+        ],
+      },
+    });
+    res.status(200).json(animal_profiles);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
 });
+
+// Alternative (original)
+// router.get('/', (req, res) => {
+//   Profile.findAll({
+//     attributes: {
+//       exclude: [
+//       'animal_type', 
+//       'age', 
+//       'breed_mix', 
+//       'personality_quirks', 
+//       'furry_family', 
+//       'date_fostered',
+//       'email',
+//       'diet',
+//       'kids',
+//       'dog',
+//       'cat',
+//       'neutered_spayed',
+//       'vaxed',
+//       'i_love',
+//       'adopt_me_url',
+//     ]
+//     }
+//   }).then((profileData) => {
+//   res.json(profileData);
+//   });
+// });
+
+
 
 router.get('/profile', async (req, res) => {
   try {
