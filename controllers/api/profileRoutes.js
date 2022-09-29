@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     // find a single profile by its `id`
     try {
         const profileData = await Profile.findByPk(req.params.id, {
-            include: [{ model: Users }, { model: Post }, { model: Image }],
+            // include: [{ model: Users }, { model: Post }, { model: Image }],
         });
 
         if (!profileData) {
@@ -37,6 +37,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // create new profile
+//need to still work on 
 router.post('/', async (req, res) => {
     // create a new Profile
     try {
@@ -56,8 +57,8 @@ router.post('/', async (req, res) => {
             neutered_spayed: req.body.neutered_spayed,
             vaxed: req.body.vaxed,
             i_love: req.body.i_love,
-            adopt_me_url: req.body.adopt_me_url,
-            user_id: req.session.user_id
+            // adopt_me_url: req.body.adopt_me_url,
+            // user_id: req.session.user_id
         });
         res.status(200).json(newProfile);
     } catch (err) {
@@ -68,22 +69,27 @@ router.post('/', async (req, res) => {
 
 
 // update profile
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', async (req, res) => {
     // update product data
-    Profile.update(req.body, {
-        where: {
-            id: req.params.id,
-        },
-    })
-        .then((profileData) => res.json(profileData))
-        .catch((err) => {
-            // console.log(err);
-            res.status(400).json(err);
+    try{
+        const profileData = await Profile.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
         });
+        if (!profileData[0]) {
+            res.status(404).json({ message: 'No Profile with this id!' });
+            return;
+        }
+        res.status(200).json(profileData);
+    } catch (err) {
+        res.status(500).json(err);
+    }   
 });
 
+
 //delete profile
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     // delete one profile by its `id` value
     try {
         const profileData = await Profile.destroy({
