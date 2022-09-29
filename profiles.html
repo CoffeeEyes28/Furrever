@@ -24,19 +24,17 @@
       <section class="tile is-child notification is-vertical has-text-centered">
         <br><br><br>
         <p class="title has-text-info-dark"><strong>Welcome, Furry Friends and Families!</strong></p>
-        <p class="subtitle">Did you already create a profile for the pet(s) you're currently fostering?<br>If you
-          haven't yet, don't forget to create one right now!</strong></p>
+        <p class="subtitle">Did you already create a profile for the pet(s) you're currently fostering?<br>If you haven't yet, don't forget to create one right now!</strong></p>
         <br>
         <img src="./images/Sample1.jpg" alt="Placeholder">
         <br><br>
         <p class="title has-text-info-dark"><strong>Are You Serious About Adoption?</strong></p>
-        <p class="subtitle">Hello, our valuable friend/family member! Do you want to take the next step? Please drop the
-          url of the Shelter your pet is currently associated with. </p>
+        <p class="subtitle">Hello, our valuable friend/family member! Do you want to take the next step? Please drop the url of the Shelter your pet is currently associated with. </p>
+        <!-- Don't forget the shelter url for adoption! -->
         <label for="adopt_me_url" class="label is-normal is-inline">Shelter URL:</label>
-        <input type="url" class="adopt_me_url" name="adopt_me_url" placeholder="https://www.shelter.org/"
-          style="width:55%">
-        <button class="button is-small has-background-info-dark has-text-white" id="submit_url" type="submit"
-          style="height:27px"><strong>Submit URL</strong></button>
+        <input type="url" id="adopt_me_url" name="adopt_me_url" placeholder="https://www.shelter.org/" style="width:55%">
+        <button class="button is-small has-background-info-dark is-inline has-text-white" id="submit_url" type="submit"
+          style="height:27px"><strong>Submit</strong></button>
         </form>
         <br><br>
       </section>
@@ -45,8 +43,8 @@
     <section class="tile is-parent is-vertical is-9">
       <section class="tile is-child notification is-vertical">
         <br>
-        <p class="title is-3 has-text-info-dark"><strong>Please fill this questionnaire out in order to create a
-            profile.</strong></p>
+        <p class="title is-3 has-text-info-dark"><strong>Please fill this questionnaire out in order to create a profile.</strong></p>
+        <!-- this is where the main form is! -->
         <form id="questionnaire">
           <label for="animal_type" class="label is-medium is-inline">I am a:</label>
           <input type="radio" class="animal_type" name="animal_type" value="cat">
@@ -58,7 +56,7 @@
           <input type="text" id="name" name="name" Placeholder="Pet Name" style="width:40%">
           <br><br>
           <label for="age" class="label is-medium is-inline">My Age:</label>
-          <select>
+          <select id="age">
             <option value="zero-one-yo">0-1 year old</option>
             <option value="one-yo">1 year old</option>
             <option value="two-five-yo">2-5 years old</option>
@@ -70,8 +68,8 @@
           </select>
           <br><br>
           <label for="breed_mix" class="label is-medium is-inline">My Breed/Mix:</label>
-          <input type="text" id="breed_mix" name="breed_mix"
-            Placeholder="Use our autocompletion from existing database" style="width:40%">
+          <input type="text" id="breed_mix" name="breed_mix" Placeholder="Use our autocompletion from existing database"
+            style="width:40%">
           <br><br>
           <label for="personality_quirks" class="label is-medium is-inline">My Personality Quirks:</label>
           <input type="text" id="personality_quirks" name="personality_quirks" Placeholder="Personality Quirks"
@@ -103,7 +101,7 @@
           <input type="email" id="email" name="email" placeholder="Test@email.com" style="width:40%">
           <br><br>
           <label for="date_fostered" class="label is-medium is-inline">Fostered Since:</label>
-          <input type="text" id="date_fostered" name="date_fostered" placeholder="MM/YY/DDDD" style="width:40%">
+          <input type="text" id="date_fostered" name="date_fostered" placeholder="MM/DD/YYYY" style="width:40%">
           <br><br>
           <label for="neutered_spayed" class="label is-medium is-inline">I am neutered/spayed:</label>
           <input type="radio" class="neutered_spayed" name="neutered_spayed" value="yes">
@@ -123,7 +121,8 @@
           <label for="i_love" class="label is-medium is-inline"> I love to:</label>
           <input type="text" id="i_love" name="i_love" Placeholder="Description" style="width:40%">
           <br><br>
-          <button class="button has-background-info-dark has-text-white" id="create_profile" style="height: 27px" type="submit"><strong>Create My Profile!</strong></button>
+          <button class="button has-background-info-dark has-text-white" id="create_profile" style="height: 27px"
+            type="submit"><strong>Create My Profile!</strong></button>
         </form>
       </section>
     </section>
@@ -131,4 +130,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="test_profile.js"></script>
 </body>
+
 </html>
