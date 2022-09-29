@@ -24,11 +24,13 @@ const parser = multer({ storage: storage });
 
 
 router.post('/', parser.single('image'), async (req,res) => {
+    
     try {
         const imageData = await Image.create({
             multimedia_url: req.body.multimedia_url,
         })
         res.status(200).json(imageData)
+        console.log(imageData)
     } catch (error) {
         res.status(500).json(error)
     }
