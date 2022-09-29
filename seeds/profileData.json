@@ -1,0 +1,38 @@
+[
+    {
+     "animal_type": "Dog",
+     "name": "Diego",
+     "age": "0-1",
+     "breed_mix": "Sheperd Mix",
+     "personality_quirks": "Reactive",
+     "furry_family": "Monica",
+     "date_fostered": "01/15/22",
+     "email": "monica2@gmail.com",
+     "diet": "Hills larged breed dry food",
+     "kids": false,
+     "dog": false,
+     "cat": false,
+     "neutered_spayed": true,
+     "vaxed": true,
+     "i_love": "Tennis Balls!",
+     "user_id": 1
+    },
+    {
+     "animal_type": "Cat",
+     "name": "Luna",
+     "age": "5+",
+     "breed_mix": "Tabby",
+     "personality_quirks": "Loner",
+     "furry_family": "Stephy",
+     "date_fostered": "04/15/17",
+     "email": "stephy2@gmail.com",
+     "diet": "friskes wet food",
+     "kids": false,
+     "dog": false,
+     "cat": false,
+     "neutered_spayed": true,
+     "vaxed": true,
+     "i_love": "Furniture",
+     "user_id": 2
+    }
+ ]
