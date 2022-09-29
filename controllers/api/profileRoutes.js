@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     // find all profiles
     try {
         const profileData = await Profile.findAll({
-            include: [{ model: Users }, { model: Post }, { model: Image }],
+            // include: [{ model: Users }, { model: Post }, { model: Image }],
         });
         res.status(200).json(profileData);
     } catch (err) {
