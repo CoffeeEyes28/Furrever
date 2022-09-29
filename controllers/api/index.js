@@ -4,7 +4,7 @@ const profileRoutes = require('./profileRoutes');
 const postRoutes = require('./postRoutes');
 
 router.use('/users', userRoutes);
-router.use('profiles', profileRoutes);
+router.use('/profiles', profileRoutes);
 router.use('/posts', postRoutes);
 
 module.exports = router;
