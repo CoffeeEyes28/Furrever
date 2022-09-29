@@ -1,13 +1,73 @@
 const router = require('express').Router();
-const { Users, Profile } = require('../models');
+const { Users, Profile, Post } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-  // TODO: Add a comment describing the functionality of this method
-  Users.findAll().then((usersData) => {
-    res.json(usersData);
+  Profile.findAll({
+    attributes: {
+      exclude: [
+      'animal_type', 
+      'age', 
+      'breed_mix', 
+      'personality_quirks', 
+      'furry_family', 
+      'date_fostered',
+      'email',
+      'diet',
+      'kids',
+      'dog',
+      'cat',
+      'neutered_spayed',
+      'vaxed',
+      'i_love',
+      'adopt_me_url',
+    ]
+    }
+  }).then((profileData) => {
+  res.json(profileData);
   });
 });
+
+router.get('/profile', async (req, res) => {
+  try {
+    const userData = await Profile.findByPk(req.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post,
+       attributes: [
+        'id', 'media', 'caption',
+       ]}],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.json('profile', {
+      ...user,
+  
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.get('/profile/:id', (req, res) => {
+  Profile.findByPk(req.params.id).then((profileData) => {
+    res.json(profileData);
+  });
+});
+
+// router.get('/login', (req, res) => {
+//   Profile.findAll().then((profileData) => {
+//     res.json(profileData);
+//   });
+// });
+
+// router.get('/', (req, res) => {
+//   // TODO: Add a comment describing the functionality of this method
+//   Profile.findAll().then((profileData) => {
+//     res.json(profileData);
+//   });
+// });
 
 // router.get('/', async (req, res) => {
 //   try {
