@@ -12,7 +12,7 @@
 <body>
   <!-- Our Banner to be inserted in main handle bar and below is sample only-->
   <section class="hero">
-    <img src="./images/banner.jpg" alt="banner" width="100%">
+    <img src="../Assets/banner.jpg" alt="banner" width="100%">
     <div class="hero-body">
     </div>
   </section>
@@ -26,16 +26,10 @@
         <p class="title has-text-info-dark"><strong>Welcome, Furry Friends and Families!</strong></p>
         <p class="subtitle">Did you already create a profile for the pet(s) you're currently fostering?<br>If you haven't yet, don't forget to create one right now!</strong></p>
         <br>
-        <img src="./images/Sample1.jpg" alt="Placeholder">
+        <img src="../Assets/Sample1.jpg" alt="Placeholder">
         <br><br>
         <p class="title has-text-info-dark"><strong>Are You Serious About Adoption?</strong></p>
-        <p class="subtitle">Hello, our valuable friend/family member! Do you want to take the next step? Please drop the url of the Shelter your pet is currently associated with. </p>
-        <!-- Don't forget the shelter url for adoption! -->
-        <label for="adopt_me_url" class="label is-normal is-inline">Shelter URL:</label>
-        <input type="url" id="adopt_me_url" name="adopt_me_url" placeholder="https://www.shelter.org/" style="width:55%">
-        <button class="button is-small has-background-info-dark is-inline has-text-white" id="submit_url" type="submit"
-          style="height:27px"><strong>Submit</strong></button>
-        </form>
+        <p class="subtitle">Hello, our valuable friend/family member! Do you want to take the next step? Please drop the url of the Shelter your pet is currently associated with when creating the profile. </p>
         <br><br>
       </section>
     </section>
@@ -121,14 +115,18 @@
           <label for="i_love" class="label is-medium is-inline"> I love to:</label>
           <input type="text" id="i_love" name="i_love" Placeholder="Description" style="width:40%">
           <br><br>
+          <!-- Don't forget the shelter url for adoption! -->
+          <label for="adopt_me_url" class="label is-medium is-inline">Which Shelter told you about me? <br>Shelter URL:</label>
+          <input type="url" id="adopt_me_url" name="adopt_me_url" placeholder="https://www.shelter.org/" style="width:55%">
+          <br><br>
           <button class="button has-background-info-dark has-text-white" id="create_profile" style="height: 27px"
             type="submit"><strong>Create My Profile!</strong></button>
         </form>
       </section>
     </section>
   </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="test_profile.js"></script>
+ 
+  <script src="../public/js/test_profile.js"></script>
 </body>
 
 </html>

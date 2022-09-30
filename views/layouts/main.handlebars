@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hello Furrever Family and Friends!</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
-<main>
-    {{{body}}}
-</main>
+
+<body>
+    {{!--  Our Banner to be inserted in main handle bar and below is sample only --}}
+    <section class="hero">
+        <img src="/Assets/banner.jpg" alt="banner" width="100%">
+        <div class="hero-body">
+        </div>
+    </section>
+    
+    <main>
+        <aside></aside>
+        {{!-- Where our questionnaire will go --}}
+        {{{body}}}
+    </main>
+    <script src="/public/js/test_profile.js"></script>
+</body>
+
 </html>
