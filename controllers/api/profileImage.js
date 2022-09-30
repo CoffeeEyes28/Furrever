@@ -26,11 +26,27 @@ const parser = multer({ storage: storage });
 router.post('/', parser.single('image'), async (req,res) => {
     
     try {
+        const findImage = await Image.findOne({
+            where: {user_id: 3}
+            // req.session.user_id
+        })
+        console.log(findImage)
+        if(!findImage){
         const imageData = await Image.create({
-            multimedia_url: req.body.multimedia_url,
+            multimedia_url: req.file.path,
+            user_id: 3,
         })
         res.status(200).json(imageData)
-        console.log(imageData)
+        console.log(req.file)
+    }else {
+        const updateImage = await Image.update({
+            multimedia_url: req.file.path
+        },
+        {
+            where: {user_id: 3}
+        })
+        res.status(200).json(updateImage)
+    }
     } catch (error) {
         res.status(500).json(error)
     }

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Users, Profile, Post } = require('../models');
+const { Users, Profile, Post, Image } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -43,7 +43,7 @@ router.get('/profile/:user_id', async (req, res) => {
   try {
     const profile_postId = await Users.findByPk(req.params.user_id, {
       attributes: { exclude: ['password']},
-      include: [{ model: Post },{ model: Profile }],
+      include: [{ model: Post },{ model: Profile }, {model: Image}],
     });
     res.status(200).json(profile_postId);
   } catch (err) {
