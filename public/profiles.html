@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello Furry Family and Friends!</title>
-  <link rel="stylesheet" href="./public/css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
@@ -41,9 +41,9 @@
         <!-- this is where the main form is! -->
         <form id="questionnaire">
           <label for="animal_type" class="label is-medium is-inline">I am a:</label>
-          <input type="radio" class="animal_type" name="animal_type" value="cat">
+          <input type="radio" id="animal_type_cat" name="animal_type" value="cat">
           <label for="Cat">Cat</label>
-          <input type="radio" class="animal_type" name="animal_type" value="dog">
+          <input type="radio" id="animal_type_dog" name="animal_type" value="dog">
           <label for="Dog">Dog</label>
           <br><br>
           <label for="name" class="label is-medium is-inline">My Name:</label>
@@ -70,21 +70,21 @@
             style="width:40%">
           <br><br>
           <label for="dog" class="label is-medium is-inline">I get along with other dogs:</label>
-          <input type="radio" class="dog" name="dog" value="yes">
+          <input type="radio" id="dog_yes" name="dog" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" class="dog" name="dog" value="no">
+          <input type="radio" id="dog_no" name="dog" value="no">
           <label for="No">No</label>
           <br><br>
           <label for="cat" class="label is-medium is-inline">I get along with other cats:</label>
-          <input type="radio" class="cat" name="cat" value="yes">
+          <input type="radio" id="cat_yes" name="cat" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" class="cat" name="cat" value="no">
+          <input type="radio" id="cat_no" name="cat" value="no">
           <label for="No">No</label>
           <br><br>
           <label for="kids" class="label is-medium is-inline">I get along with other children:</label>
-          <input type="radio" class="kids" name="kids" value="yes">
+          <input type="radio" id="kids_yes" name="kids" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" class="kids" name="kids" value="no">
+          <input type="radio" id="kids_no" name="kids" value="no">
           <label for="No">No</label>
           <br><br>
           <label for="furry_family" class="label is-medium is-inline">My Furry Friends/Family Members are
@@ -98,15 +98,15 @@
           <input type="text" id="date_fostered" name="date_fostered" placeholder="MM/DD/YYYY" style="width:40%">
           <br><br>
           <label for="neutered_spayed" class="label is-medium is-inline">I am neutered/spayed:</label>
-          <input type="radio" class="neutered_spayed" name="neutered_spayed" value="yes">
+          <input type="radio" id="neutered_spayed_yes" name="neutered_spayed" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" class="neutered_spayed" name="neutered_spayed" value="no">
+          <input type="radio" id="neutered_spayed_no" name="neutered_spayed" value="no">
           <label for="No">No</label>
           <br><br>
           <label for="vaxed" class="label is-medium is-inline">I am vaccinated:</label>
-          <input type="radio" class="vaxed" name="vaxed" value="yes">
+          <input type="radio" id="vaxed_yes" name="vaxed" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" class="vaxed" name="vaxed" value="no">
+          <input type="radio" id="vaxed_no" name="vaxed" value="no">
           <label for="No">No</label>
           <br><br>
           <label for="diet" class="label is-medium is-inline">My Diet:</label>
