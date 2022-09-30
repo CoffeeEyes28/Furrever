@@ -23,10 +23,14 @@ router.get('/', async (req, res) => {
           'i_love',
           'adopt_me_url',
         ],
+       
       },
     });
+    const profiles = animal_profiles.map((profile)=> profile.get({plain:true}))
     // res.status(200).json(animal_profiles);
-    res.render('hometest')
+    res.render('hometest', {
+      profiles,
+    });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
