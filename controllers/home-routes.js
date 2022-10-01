@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Users, Profile, Post } = require('../models');
+const { Users, Profile, Post, Image } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const animal_profiles = await Profile.findAll({
+    const animal_profiles = await Users.findAll({
       attributes: {
         exclude: [
           'animal_type', 
@@ -25,8 +25,10 @@ router.get('/', async (req, res) => {
         ],
        
       },
+      include:[{model: Profile}, {model: Image}]
     });
     const profiles = animal_profiles.map((profile)=> profile.get({plain:true}))
+    console.log(profiles)
     // res.status(200).json(animal_profiles);
     res.render('hometest', {
       profiles,
@@ -43,7 +45,7 @@ router.get('/profile/:user_id', async (req, res) => {
   try {
     const profile_postId = await Users.findByPk(req.params.user_id, {
       attributes: { exclude: ['password']},
-      include: [{ model: Post },{ model: Profile }],
+      include: [{ model: Post },{ model: Profile }, {model: Image}],
     });
     res.status(200).json(profile_postId);
   } catch (err) {
