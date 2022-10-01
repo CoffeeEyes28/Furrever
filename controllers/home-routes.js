@@ -4,7 +4,7 @@ const { Users, Profile, Post, Image } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    const animal_profiles = await Profile.findAll({
+    const animal_profiles = await Users.findAll({
       attributes: {
         exclude: [
           'animal_type', 
@@ -25,8 +25,10 @@ router.get('/', async (req, res) => {
         ],
        
       },
+      include:[{model: Profile}, {model: Image}]
     });
     const profiles = animal_profiles.map((profile)=> profile.get({plain:true}))
+    console.log(profiles)
     // res.status(200).json(animal_profiles);
     res.render('hometest', {
       profiles,
