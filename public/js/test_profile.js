@@ -9,10 +9,10 @@ const breed_mix = document.getElementById("breed_mix").value;
 const personality_quirks = document.getElementById("personality_quirks").value;
 const furry_family = document.getElementById("furry_family").value;
 const date_fostered = document.getElementById("date_fostered").value;
-const email = document.getElementById("email");
-const diet = document.getElementById("diet");
-const i_love = document.getElementById("i_love");
-const adopt_me_url = document.getElementById("adopt_me_url");
+const email = document.getElementById("email").value;
+const diet = document.getElementById("diet").value;
+const i_love = document.getElementById("i_love").value;
+const adopt_me_url = document.getElementById("adopt_me_url").value;
 
 // const for animal_type radio buttons
 const animal_type_dog = document.getElementById("animal_type_dog");
@@ -110,6 +110,7 @@ let vaxed = "";
         i_love: i_love,
         adopt_me_url: adopt_me_url
     };
+    
     console.log("button is working!");
     console.log(questionnaire)
 });
