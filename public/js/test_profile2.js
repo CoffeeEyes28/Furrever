@@ -4,6 +4,7 @@ document.getElementById("create_feed").addEventListener("click", function(event)
     const caption = document.getElementById("caption")
     caption.innerText = new_feed;
     var posted_feed = {
+        media: "not now",
         caption: new_feed
     };
     console.log("button worked!");
