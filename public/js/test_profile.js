@@ -33,9 +33,9 @@ const dog_no = document.getElementById("dog_no")
 
 let dog = "";
     if (dog_yes.checked == true){
-        dog = "yes"
+        dog = true
     } else if (dog_no.checked == true){
-        dog = "no"
+        dog = false
     } else {
         console.log("choose a radio button!")
     }
@@ -46,9 +46,9 @@ const cat_no = document.getElementById("cat_no")
 
 let cat = "";
     if (cat_yes.checked == true){
-        cat = "yes"
+        cat = true
     } else if (cat_no.checked == true){
-        cat = "no"
+        cat = false
     } else {
         console.log("choose a radio button!")
     }
@@ -59,9 +59,9 @@ const kids_no = document.getElementById("cat_no")
 
 let kids = "";
     if (kids_yes.checked == true){
-        kids = "yes"
+        kids = true
     } else if (kids_no.checked == true){
-        kids = "no"
+        kids = false
     } else {
         console.log("choose a radio button!")
     }
@@ -72,9 +72,9 @@ const neutered_spayed_no = document.getElementById("neutered_spayed_no")
 
 let neutered_spayed = "";
     if (neutered_spayed_yes.checked == true){
-        neutered_spayed = "yes"
+        neutered_spayed = true
     } else if (neutered_spayed_no.checked == true){
-        neutered_spayed = "no"
+        neutered_spayed = false
     } else {
         console.log("choose a radio button!")
     }
@@ -85,9 +85,9 @@ const vaxed_no = document.getElementById("vaxed_no")
 
 let vaxed = "";
     if (vaxed_yes.checked == true){
-        vaxed = "yes"
+        vaxed = true
     } else if (vaxed_no.checked == true){
-        vaxed = "no"
+        vaxed = false
     } else {
         console.log("choose a radio button!")
     }
