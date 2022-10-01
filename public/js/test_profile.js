@@ -1,6 +1,8 @@
 // Object I want rendered
-document.getElementById("create_profile").addEventListener("click", function(event){
+document.getElementById("create_profile").addEventListener("click", (event) => {
 
+ event.preventDefault();
+ 
 // const for field inputs that are strings
 const age = document.getElementById("age").value;
 const breed_mix = document.getElementById("breed_mix").value;
@@ -90,25 +92,25 @@ let vaxed = "";
         console.log("choose a radio button!")
     }
 
+    // This is the very object I want rendererd so console.log to double check
     var questionnaire = {
         animal_type: animal_type, 
         age: age, 
-        breed_mix:breed_mix,
+        breed_mix: breed_mix,
         personality_quirks: personality_quirks,
         furry_family: furry_family,
         date_fostered: date_fostered,
         email: email,
-        diet:diet,
+        diet: diet,
         kids: kids,
         dog: dog,
         cat: cat,
-        neutered_spayed:neutered_spayed,
-        vaxed:  vaxed,
+        neutered_spayed: neutered_spayed,
+        vaxed: vaxed,
         i_love: i_love,
         adopt_me_url: adopt_me_url
     };
-    
-    event.preventDefault();
     console.log("button is working!");
     console.log(questionnaire)
 });
+    
