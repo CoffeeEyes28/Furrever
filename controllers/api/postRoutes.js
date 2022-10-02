@@ -12,13 +12,54 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+
+// Cloudinary functionality
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+require('dotenv').config()
+
+cloudinary.config({
+cloud_name: process.env.CLOUD_NAME,
+api_key: process.env.API_KEY,
+api_secret: process.env.API_SECRET
+});
+
+const storage2 = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+    folder: "posts",
+    format: 'png',
+    allowedFormats: ["jpg", "png"],
+    transformation: [{ width: 500, height: 500, crop: "limit" }]
+    },
+});
+
+const parser = multer({storage: storage2});
+
+
+router.post("/photo", parser.single('image'), async (req, res) => {
   try {
     const postData = await Post.create({
-      media: req.body.media,
+      media: req.file.path,
       caption: req.body.caption,
-      user_id: req.session.user_id,
+      user_id: 2,
     });
+    console.log(postData)
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.post("/text", async (req, res) => {
+  try {
+    const postData = await Post.create({
+      caption: req.body.caption,
+      user_id: 2,
+    });
+    console.log(postData)
     res.status(200).json(postData);
   } catch (err) {
     res.status(500).json(err);

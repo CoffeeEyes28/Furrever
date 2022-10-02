@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Furrever Family and Friends!</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-
-<body>
-  <!-- Our Banner to be inserted in main handle bar and below is sample only-->
+ <!-- Our Banner to be inserted in main handle bar and below is sample only-->
   <section class="hero">
-    <img src="../Assets/banner.jpg" alt="banner" width="100%">
+    <img src="./images/banner.jpg" alt="banner" width="100%">
     <div class="hero-body">
     </div>
   </section>
@@ -23,13 +11,19 @@
     <section class="tile is-parent is-vertical is-5">
       <section class="tile is-child notification is-vertical has-text-centered">
         <br><br><br>
-        <p class="title has-text-info-dark"><strong>Welcome, Furrever Friends and Families!</strong></p>
+        <p class="title has-text-info-dark"><strong>Welcome, Furry Friends and Families!</strong></p>
         <p class="subtitle">Did you already create a profile for the pet(s) you're currently fostering?<br>If you haven't yet, don't forget to create one right now!</strong></p>
         <br>
-        <img src="../Assets/Sample1.jpg" alt="Placeholder">
+        <img src="./images/Sample1.jpg" alt="Placeholder">
         <br><br>
         <p class="title has-text-info-dark"><strong>Are You Serious About Adoption?</strong></p>
-        <p class="subtitle">Hello, our valuable friend/family member! Do you want to take the next step? Please drop the url of the Shelter your pet is currently associated with when creating the profile. </p>
+        <p class="subtitle">Hello, our valuable friend/family member! Do you want to take the next step? Please drop the url of the Shelter your pet is currently associated with. </p>
+        <!-- Don't forget the shelter url for adoption! -->
+        <label for="adopt_me_url" class="label is-normal is-inline">Shelter URL:</label>
+        <input type="url" id="adopt_me_url" name="adopt_me_url" placeholder="https://www.shelter.org/" style="width:55%">
+        <button class="button is-small has-background-info-dark is-inline has-text-white" id="submit_url" type="submit"
+          style="height:27px"><strong>Submit</strong></button>
+        </form>
         <br><br>
       </section>
     </section>
@@ -37,13 +31,13 @@
     <section class="tile is-parent is-vertical is-9">
       <section class="tile is-child notification is-vertical">
         <br>
-        <p class="title is-5 has-text-info-dark"><strong>Please fill this questionnaire out in order to create a profile.</strong></p>
+        <p class="title is-3 has-text-info-dark"><strong>Please fill this questionnaire out in order to create a profile.</strong></p>
         <!-- this is where the main form is! -->
         <form id="questionnaire">
           <label for="animal_type" class="label is-medium is-inline">I am a:</label>
-          <input type="radio" id="animal_type_cat" name="animal_type" value="cat">
+          <input type="radio" class="animal_type" name="animal_type" value="cat">
           <label for="Cat">Cat</label>
-          <input type="radio" id="animal_type_dog" name="animal_type" value="dog">
+          <input type="radio" class="animal_type" name="animal_type" value="dog">
           <label for="Dog">Dog</label>
           <br><br>
           <label for="name" class="label is-medium is-inline">My Name:</label>
@@ -62,48 +56,51 @@
           </select>
           <br><br>
           <label for="breed_mix" class="label is-medium is-inline">My Breed/Mix:</label>
-          <input type="text" id="breed_mix" name="breed_mix" Placeholder="Use our autocompletion from existing database" style="width:40%">
+          <input type="text" id="breed_mix" name="breed_mix" Placeholder="Use our autocompletion from existing database"
+            style="width:40%">
           <br><br>
           <label for="personality_quirks" class="label is-medium is-inline">My Personality Quirks:</label>
-          <input type="text" id="personality_quirks" name="personality_quirks" Placeholder="Personality Quirks" style="width:40%">
+          <input type="text" id="personality_quirks" name="personality_quirks" Placeholder="Personality Quirks"
+            style="width:40%">
           <br><br>
           <label for="dog" class="label is-medium is-inline">I get along with other dogs:</label>
-          <input type="radio" id="dog_yes" name="dog" value="yes">
+          <input type="radio" class="dog" name="dog" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" id="dog_no" name="dog" value="no">
+          <input type="radio" class="dog" name="dog" value="no">
           <label for="No">No</label>
           <br><br>
           <label for="cat" class="label is-medium is-inline">I get along with other cats:</label>
-          <input type="radio" id="cat_yes" name="cat" value="yes">
+          <input type="radio" class="cat" name="cat" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" id="cat_no" name="cat" value="no">
+          <input type="radio" class="cat" name="cat" value="no">
           <label for="No">No</label>
           <br><br>
           <label for="kids" class="label is-medium is-inline">I get along with other children:</label>
-          <input type="radio" id="kids_yes" name="kids" value="yes">
+          <input type="radio" class="kids" name="kids" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" id="kids_no" name="kids" value="no">
+          <input type="radio" class="kids" name="kids" value="no">
           <label for="No">No</label>
           <br><br>
-          <label for="furry_family" class="label is-medium is-inline">My Furrever Friends/Family Members are called:</label>
-          <input type="text" id="furry_family" name="furry_family" placeholder="Family Full Name" style="width:30%">
+          <label for="furry_family" class="label is-medium is-inline">My Furry Friends/Family Members are
+            called:</label>
+          <input type="text" id="furry_family" name="furry_family" placeholder="Family Full Name" style="width:40%">
           <br><br>
           <label for="email" class="label is-medium is-inline">Email Address:</label>
-          <input type="text" id="email" name="email" placeholder="Test@email.com" style="width:40%">
+          <input type="email" id="email" name="email" placeholder="Test@email.com" style="width:40%">
           <br><br>
           <label for="date_fostered" class="label is-medium is-inline">Fostered Since:</label>
           <input type="text" id="date_fostered" name="date_fostered" placeholder="MM/DD/YYYY" style="width:40%">
           <br><br>
           <label for="neutered_spayed" class="label is-medium is-inline">I am neutered/spayed:</label>
-          <input type="radio" id="neutered_spayed_yes" name="neutered_spayed" value="yes">
+          <input type="radio" class="neutered_spayed" name="neutered_spayed" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" id="neutered_spayed_no" name="neutered_spayed" value="no">
+          <input type="radio" class="neutered_spayed" name="neutered_spayed" value="no">
           <label for="No">No</label>
           <br><br>
           <label for="vaxed" class="label is-medium is-inline">I am vaccinated:</label>
-          <input type="radio" id="vaxed_yes" name="vaxed" value="yes">
+          <input type="radio" class="vaxed" name="vaxed" value="yes">
           <label for="Yes">Yes</label>
-          <input type="radio" id="vaxed_no" name="vaxed" value="no">
+          <input type="radio" class="vaxed" name="vaxed" value="no">
           <label for="No">No</label>
           <br><br>
           <label for="diet" class="label is-medium is-inline">My Diet:</label>
@@ -112,18 +109,11 @@
           <label for="i_love" class="label is-medium is-inline"> I love to:</label>
           <input type="text" id="i_love" name="i_love" Placeholder="Description" style="width:40%">
           <br><br>
-          <!-- Don't forget the shelter url for adoption! -->
-          <label for="adopt_me_url" class="label is-medium is-inline">Which Shelter told you about me? URL:</label>
-          <input type="text" id="adopt_me_url" name="adopt_me_url" placeholder="https://www.shelter.org/" style="width:35%">
-          <br><br>
           <button class="button has-background-info-dark has-text-white" id="create_profile" style="height: 27px"
             type="submit"><strong>Create My Profile!</strong></button>
         </form>
       </section>
     </section>
   </section>
- 
-  <script src="../public/js/test_profile.js"></script>
-</body>
-
-</html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="test_profile.js"></script>
