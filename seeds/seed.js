@@ -24,10 +24,10 @@ const posts = await Post.bulkCreate(postData, {
     returning: true
 });
 
-const image = await Image.bulkCreate(imageData, {
-  individualHooks: true,
-  returning: true
-})
+// const image = await Image.bulkCreate(imageData, {
+//   individualHooks: true,
+//   returning: true
+// })
 
 process.exit(0);
 }
