@@ -33,7 +33,7 @@ router.post('/', parser.single('image'), async (req,res) => {
             where: {user_id: 2}
             // req.session.user_id
         })
-        console.log(findImage)
+        
         if(!findImage){
         const imageData = await Image.create({
             multimedia_url: req.file.path,
