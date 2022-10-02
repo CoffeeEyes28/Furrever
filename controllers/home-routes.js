@@ -67,7 +67,10 @@ router.get('/profile/:user_id', async (req, res) => {
       attributes: { exclude: ['password']},
       include: [{ model: Post },{ model: Profile }, {model: Image}],
     });
-   res.render('profile')
+    const loggedIn = req.session.logged_in
+   res.render('profile',{
+    loggedIn
+   })
   } catch (err) {
     res.status(400).json(err); 
   }
@@ -76,8 +79,12 @@ router.get('/profile/:user_id', async (req, res) => {
 
 
 router.get('/create', (req, res) =>{
+  console.log(req.session.user_id)
   try {
-    res.render('createProfileTest')
+    const loggedIn = req.session.logged_in
+    res.render('createProfile',{
+      loggedIn
+    })
   } catch (err) {
     res.status(400).json(err);
   }
