@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Users, Profile } = require('../../models');
 
-router.post('/', async (req,res) => {
+router.post('/', async (req, res) => {
     try {
         const userData = await Users.create({
             username: req.body.username,
@@ -20,20 +20,21 @@ router.post('/', async (req,res) => {
     }
 });
 
-router.post('/login', async (req,res) => {
+router.post('/login', async (req, res) => {
     try {
-        const userData = await Users.findOne({where: {username: req.body.username} });
-        if(!userData){
+        const userData = await Users.findOne({ where: { username: req.body.username } });
+        if (!userData) {
             res.status(400)
-            .json({message: 'Incorrect username or password, please try again'});
+                .json({ message: 'Incorrect username or password, please try again' });
             return;
         }
 
         const validPassword = await userData.checkPassword(req.body.password);
-        
-        if(!validPassword){
+        console.log('validPassword')
+
+        if (!validPassword) {
             res.status(400)
-            .json({message: "Incorrect email or password, please try again"});
+                .json({ message: "Incorrect email or password, please try again" });
             return;
         }
         req.session.save(() => {
@@ -41,8 +42,8 @@ router.post('/login', async (req,res) => {
             req.session.logged_in = true;
         })
         //check profile table , find any profiles id with the same user_id, if that is true redirect to dashboard, if false redirect profile page to create one
-        const profileData = await Profile.findAll({where: {user_id: userData.id }});
-        if(!profileData){
+        const profileData = await Profile.findAll({ where: { user_id: userData.id } });
+        if (!profileData) {
             res.render('profile', req.session.logged_in)
         } else res.render('hometest', {
             profileData,
@@ -61,11 +62,11 @@ router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();
-      });
+        });
     } else {
-      res.status(404).end();
+        res.status(404).end();
     }
-  });
+});
 
 
 
