@@ -3,6 +3,7 @@ const { Users, Profile, Post, Image } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
+  console.log(req.session.logged_in)
   try {
     const animal_profiles = await Users.findAll({
       attributes: {
@@ -28,7 +29,8 @@ router.get('/', async (req, res) => {
       include:[{model: Profile}, {model: Image}]
     });
     const profiles = animal_profiles.map((profile)=> profile.get({plain:true}))
-    console.log(profiles)
+    // console.log(profiles)
+   
     // res.status(200).json(animal_profiles);
     res.render('home', {
       profiles,
