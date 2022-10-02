@@ -57,8 +57,8 @@ router.post('/', async (req, res) => {
             neutered_spayed: req.body.neutered_spayed,
             vaxed: req.body.vaxed,
             i_love: req.body.i_love,
-            // adopt_me_url: req.body.adopt_me_url,
-            // user_id: req.session.user_id
+            adopt_me_url: req.body.adopt_me_url,
+            user_id: req.session.user_id
         });
         res.status(200).json(newProfile);
     } catch (err) {
