@@ -3,6 +3,7 @@ const { Users, Profile, Post, Image } = require('../models');
 // const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
+  console.log(req.session.logged_in)
   try {
     const animal_profiles = await Users.findAll({
       attributes: {
@@ -28,9 +29,10 @@ router.get('/', async (req, res) => {
       include:[{model: Profile}, {model: Image}]
     });
     const profiles = animal_profiles.map((profile)=> profile.get({plain:true}))
-    console.log(profiles)
+    // console.log(profiles)
+   
     // res.status(200).json(animal_profiles);
-    res.render('hometest', {
+    res.render('home', {
       profiles,
     });
   } catch (err) {
@@ -38,6 +40,22 @@ router.get('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.get('/profile', async(req,res)=>{
+  try {
+    const currentProfile = await Users.findByPk(req.session.user_id, {
+      attributes: {exclude: ['password']},
+      include: [{model: Profile}, {model: Post}, {model: Image}],
+    });
+
+    const thisProfile = currentProfile.get({plain: true})
+    res.render('profile', {
+    thisProfile})
+
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
 
 
 // Working
@@ -47,11 +65,13 @@ router.get('/profile/:user_id', async (req, res) => {
       attributes: { exclude: ['password']},
       include: [{ model: Post },{ model: Profile }, {model: Image}],
     });
-    res.status(200).json(profile_postId);
+   res.render('profile')
   } catch (err) {
     res.status(400).json(err); 
   }
 });
+
+
 
 router.get('/create', (req, res) =>{
   try {
@@ -60,6 +80,24 @@ router.get('/create', (req, res) =>{
     res.status(400).json(err);
   }
 });
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render('login');
+});
+
+router.get('/signup', (req, res)=>{
+  if(req.session.logged_in){
+    res.redirect('/');
+    return;
+  }
+  res.render('signup')
+})
 
 
 
