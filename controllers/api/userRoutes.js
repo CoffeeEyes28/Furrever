@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Users } = require('../../models');
+const { Users, Profile } = require('../../models');
 
 router.post('/', async (req,res) => {
     try {
@@ -39,8 +39,19 @@ router.post('/login', async (req,res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-            res.json({user: userData, message: "You are now logged in!"})
         })
+        //check profile table , find any profiles id with the same user_id, if that is true redirect to dashboard, if false redirect profile page to create one
+        const profileData = await Profile.findAll({where: {user_id: userData.id }});
+        if(!profileData){
+            res.render('profile', req.session.logged_in)
+        } else res.render('hometest', {
+            profileData,
+            logged_in: req.session.logged_in
+        })
+
+
+
+        // res.json({user: userData, message: "You are now logged in!"})
     } catch (err) {
         res.status(400).json(err)
     }
@@ -48,21 +59,13 @@ router.post('/login', async (req,res) => {
 
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
-      req.session.destroy(() => {
-        res.status(204).end();
+        req.session.destroy(() => {
+            res.status(204).end();
       });
     } else {
       res.status(404).end();
     }
   });
-
-
-
-
-
-
-
-
 
 
 

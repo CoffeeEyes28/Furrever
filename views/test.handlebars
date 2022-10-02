@@ -4,3 +4,22 @@
         <button type="submit">Upload</button>
     </form>
     </div>
+
+    <br>
+
+    <div>
+        <form action = "/api/posts/photo" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="text" name="caption">
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <br>
+
+    <div>
+        <form action ="/api/posts/text" method="post">
+        <input type="text" name="caption">
+        <button type="submit">Submit</button>
+        </form>
+    </div>

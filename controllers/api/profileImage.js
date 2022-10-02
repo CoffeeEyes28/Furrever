@@ -15,10 +15,13 @@ api_secret: process.env.API_SECRET
 
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
+    params: {
     folder: "images",
+    format: 'png',
     allowedFormats: ["jpg", "png"],
     transformation: [{ width: 500, height: 500, crop: "limit" }]
-    });
+    },
+});
 
 const parser = multer({ storage: storage });
 
@@ -26,11 +29,27 @@ const parser = multer({ storage: storage });
 router.post('/', parser.single('image'), async (req,res) => {
     
     try {
+        const findImage = await Image.findOne({
+            where: {user_id: 2}
+            // req.session.user_id
+        })
+        
+        if(!findImage){
         const imageData = await Image.create({
-            multimedia_url: req.body.multimedia_url,
+            multimedia_url: req.file.path,
+            user_id: 2,
         })
         res.status(200).json(imageData)
-        console.log(imageData)
+        console.log(req.file)
+    }else {
+        const updateImage = await Image.update({
+            multimedia_url: req.file.path
+        },
+        {
+            where: {user_id: 2}
+        })
+        res.status(200).json(updateImage)
+    }
     } catch (error) {
         res.status(500).json(error)
     }
