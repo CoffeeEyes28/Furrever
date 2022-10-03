@@ -45,8 +45,8 @@
         <p>Which shelter told you about me? Url: {{thisProfile.profile.adopt_me_url}}</p>
       </section>
     </section>
-    <form id="profilePicture" action="/api/images" method="post" enctype="multipart/form-data">
-      <input type="file" name="image" />
+    <form id="profilePicture">
+      <input id ="picture" type="file" name="image" />
       <button type="submit">Upload</button>
     </form>
   </section>
