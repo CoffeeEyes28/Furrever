@@ -1,10 +1,11 @@
 // Object I want rendered
-document.getElementById("create_profile").addEventListener("click", (event) => {
+const profileCreator = async (event) => {
 
  event.preventDefault();
  
 // const for field inputs that are strings
 const age = document.getElementById("age").value;
+const name = document.getElementById('name').value;
 const breed_mix = document.getElementById("breed_mix").value;
 const personality_quirks = document.getElementById("personality_quirks").value;
 const furry_family = document.getElementById("furry_family").value;
@@ -93,8 +94,9 @@ let vaxed = "";
     }
 
     // This is the very object I want rendererd so console.log to double check
-    var questionnaire = {
+    const questionnaire = {
         animal_type: animal_type, 
+        name: name,
         age: age, 
         breed_mix: breed_mix,
         personality_quirks: personality_quirks,
@@ -112,6 +114,24 @@ let vaxed = "";
     };
     
     console.log("button is working!");
-    console.log(questionnaire)
-});
-    
+   const finalObj = JSON.stringify(questionnaire)
+
+   console.log(finalObj)
+
+    if(finalObj){
+    const response = await fetch('/api/profiles', {
+        method:'POST',
+        body: finalObj,
+        headers: {'Content-Type': 'application/json' },
+    });
+
+    if(response.ok){
+        document.location.replace('/profile');
+    } else{
+        alert ('Failed to create profile')
+    }
+    }
+
+};
+
+document.getElementById("questionnaire").addEventListener("submit",profileCreator)
