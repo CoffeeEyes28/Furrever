@@ -28,6 +28,19 @@ SO THAT I can find the animal I am looking for
 * Bulma CSS
 * JavaScript
 * JSON
+* BCrypt
+* Cloudinary
+* Connect Session Sequelize
+* Cookie Session
+* Dotenv
+* Express
+* Express Handlebars
+* Express Session
+* Multer
+* Multer Storage Cloudinary
+* MSQL12
+* Path
+* Sequelize
 ```
 
 ## Screenshot of Home Page
