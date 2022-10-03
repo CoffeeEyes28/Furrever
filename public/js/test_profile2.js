@@ -17,6 +17,7 @@ document.getElementById("create_feed").addEventListener("click", function(event)
 const uploadProfile = async (event) => {
     event.preventDefault();
    const image = document.querySelector('#picture')
+   
    var data = new FormData()
 
    data.append('image', image.files[0])
