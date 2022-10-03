@@ -30,10 +30,11 @@ router.get('/', async (req, res) => {
     });
     const profiles = animal_profiles.map((profile)=> profile.get({plain:true}))
     // console.log(profiles)
-   
+   const loggedIn = req.session.logged_in
     // res.status(200).json(animal_profiles);
     res.render('home', {
       profiles,
+      loggedIn
     });
   } catch (err) {
     console.log(err);
@@ -47,10 +48,12 @@ router.get('/profile', async(req,res)=>{
       attributes: {exclude: ['password']},
       include: [{model: Profile}, {model: Post}, {model: Image}],
     });
-
+    const loggedIn = req.session.logged_in
     const thisProfile = currentProfile.get({plain: true})
+    console.log(thisProfile)
     res.render('profile', {
-    thisProfile})
+    thisProfile, 
+  loggedIn})
 
   } catch (err) {
     res.status(500).json(err)
@@ -65,7 +68,12 @@ router.get('/profile/:user_id', async (req, res) => {
       attributes: { exclude: ['password']},
       include: [{ model: Post },{ model: Profile }, {model: Image}],
     });
-   res.render('profile')
+    const thisProfile = profile_postId.get({plain: true})
+    const loggedIn = req.session.logged_in
+   res.render('profile',{
+    thisProfile,
+    loggedIn
+   })
   } catch (err) {
     res.status(400).json(err); 
   }
@@ -74,8 +82,12 @@ router.get('/profile/:user_id', async (req, res) => {
 
 
 router.get('/create', (req, res) =>{
+  console.log(req.session.user_id)
   try {
-    res.render('createProfileTest')
+    const loggedIn = req.session.logged_in
+    res.render('createProfile',{
+      loggedIn
+    })
   } catch (err) {
     res.status(400).json(err);
   }

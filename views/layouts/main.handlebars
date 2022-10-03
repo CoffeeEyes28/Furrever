@@ -17,7 +17,13 @@
         <div class="card-content is-overlay">
         <div class="navbar-end">
             <button id="home" class="button has-background-grey has-text-white">Home</button> 
-            <button id="login"class="button has-text-white has-background-info">Log In / Sign UP</button> 
+            <button id="profile" class="button has-background-grey has-text-white">Profile</button>
+         
+            {{#if loggedIn}}
+            <button id="logout" class="button has-text-white has-background-info">Logout</button>
+            {{else}}
+               <button id="login"class="button has-text-white has-background-info">Log In / Sign UP</button> 
+            {{/if}}
         </div>
 </div>
 </div>
@@ -31,6 +37,7 @@
         {{{body}}}
     </main>
     <script src="/js/index.js"></script>
+    <script src="/js/logout.js"></script>
 
 </body>
 
