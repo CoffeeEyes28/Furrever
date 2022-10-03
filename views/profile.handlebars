@@ -9,6 +9,10 @@
         <p class="title has-text-info-dark"><strong>This is my profile!</strong></p>
         <img src="/Assets/Sample1.jpg" alt="Placeholder for pet">
       </section>
+     <form id="profilePicture" action="/api/images" method ="post" enctype="multipart/form-data">
+        <input type="file" name="image"/>
+        <button type="submit">Upload</button>
+    </form>
     </section>
     <section class="tile is-parent has-background-white is-vertical is-1">
        <!-- don't delete for spacing issues using tiles -->

@@ -1,3 +1,5 @@
+
+
 document.getElementById("create_feed").addEventListener("click", function(event){
     event.preventDefault();
     const new_feed = document.getElementById("new_feed").value;
@@ -10,3 +12,11 @@ document.getElementById("create_feed").addEventListener("click", function(event)
     console.log("button worked!");
     console.log(posted_feed)
 });
+
+
+
+
+
+document.getElementById('profilePicture').addEventListener('submit', function(){
+ document.location.reload('/profile');
+})

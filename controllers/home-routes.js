@@ -50,6 +50,7 @@ router.get('/profile', async(req,res)=>{
     });
     const loggedIn = req.session.logged_in
     const thisProfile = currentProfile.get({plain: true})
+    console.log(thisProfile)
     res.render('profile', {
     thisProfile, 
   loggedIn})

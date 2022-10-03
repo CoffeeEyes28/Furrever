@@ -39,6 +39,7 @@ router.get('/:id', async (req, res) => {
 // create new profile startSSSSS M.
 //need to still work on 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     // create a new Profile
     try {
         const newProfile = await Profile.create({
