@@ -30,14 +30,14 @@ router.post('/', parser.single('image'), async (req,res) => {
     
     try {
         const findImage = await Image.findOne({
-            where: {user_id: 2}
+            where: {user_id: req.session.user_id}
             // req.session.user_id
         })
         
         if(!findImage){
         const imageData = await Image.create({
             multimedia_url: req.file.path,
-            user_id: 2,
+            user_id: req.session.user_id,
         })
         res.status(200).json(imageData)
         console.log(req.file)
@@ -46,9 +46,10 @@ router.post('/', parser.single('image'), async (req,res) => {
             multimedia_url: req.file.path
         },
         {
-            where: {user_id: 2}
+            where: {user_id: req.session.user_id}
         })
         res.status(200).json(updateImage)
+        
     }
     } catch (error) {
         res.status(500).json(error)
