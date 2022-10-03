@@ -126,7 +126,7 @@ let vaxed = "";
     });
 
     if(response.ok){
-        document.location.replace = ('/profile');
+        document.location.replace('/profile');
     } else{
         alert ('Failed to create profile')
     }
@@ -134,4 +134,4 @@ let vaxed = "";
 
 };
 
-document.getElementById("create_profile").addEventListener("click",profileCreator)
+document.getElementById("questionnaire").addEventListener("submit",profileCreator)
