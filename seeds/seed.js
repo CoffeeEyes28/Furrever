@@ -28,7 +28,7 @@ const posts = await Post.bulkCreate(postData, {
 //   individualHooks: true,
 //   returning: true
 // })
-j
+
 process.exit(0);
 }
 

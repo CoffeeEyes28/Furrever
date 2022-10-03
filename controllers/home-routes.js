@@ -68,8 +68,10 @@ router.get('/profile/:user_id', async (req, res) => {
       attributes: { exclude: ['password']},
       include: [{ model: Post },{ model: Profile }, {model: Image}],
     });
+    const thisProfile = profile_postId.get({plain: true})
     const loggedIn = req.session.logged_in
    res.render('profile',{
+    thisProfile,
     loggedIn
    })
   } catch (err) {
