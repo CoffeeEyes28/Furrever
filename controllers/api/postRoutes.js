@@ -43,7 +43,7 @@ router.post("/photo", parser.single('image'), async (req, res) => {
     const postData = await Post.create({
       media: req.file.path,
       caption: req.body.caption,
-      user_id: 2,
+      user_id: req.session.user_id,
     });
     console.log(postData)
     res.status(200).json(postData);
@@ -57,7 +57,7 @@ router.post("/text", async (req, res) => {
   try {
     const postData = await Post.create({
       caption: req.body.caption,
-      user_id: 2,
+      user_id: req.session.user_id,
     });
     console.log(postData)
     res.status(200).json(postData);
