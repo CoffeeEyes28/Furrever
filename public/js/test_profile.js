@@ -93,7 +93,8 @@ let vaxed = "";
         console.log("choose a radio button!")
     }
 
-    // This is the very object I want rendererd so console.log to double check
+    // This is the very object I want rendererd so console.log to double check 
+    // startSSSSSS
     const questionnaire = {
         animal_type: animal_type, 
         name: name,
@@ -119,14 +120,15 @@ let vaxed = "";
    console.log(finalObj)
 
     if(finalObj){
-    const response = await fetch('/api/profiles', {
+        // error in console M.
+        const response = await fetch('/api/profiles', {
         method:'POST',
         body: finalObj,
         headers: {'Content-Type': 'application/json' },
     });
-
+// not going to /profile (instead getting error in console not going to profile 404 bad request) M.
     if(response.ok){
-        document.location.replace = ('/profile');
+        document.location.replace('/profile');
     } else{
         alert ('Failed to create profile')
     }
@@ -134,4 +136,6 @@ let vaxed = "";
 
 };
 
-document.getElementById("create_profile").addEventListener("click",profileCreator)
+document.getElementById("questionnaire").addEventListener("submit",profileCreator)
+
+// endSSSSS M.
