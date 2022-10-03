@@ -18,5 +18,5 @@ document.getElementById("create_feed").addEventListener("click", function(event)
 
 
 document.getElementById('profilePicture').addEventListener('submit', function(){
- document.location.reload('/profile');
+ document.location('/profile');
 })

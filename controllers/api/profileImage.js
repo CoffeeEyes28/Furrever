@@ -48,7 +48,10 @@ router.post('/', parser.single('image'), async (req, res) => {
         {
             where: {user_id: req.session.user_id}
         })
+
         res.status(200).json(updateImage)
+    
+    
         
     }
     } catch (error) {

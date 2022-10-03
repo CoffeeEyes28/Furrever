@@ -36,7 +36,7 @@ router.get('/:id', async (req, res) => {
 
 });
 
-// create new profile
+// create new profile startSSSSS M.
 //need to still work on 
 router.post('/', async (req, res) => {
     console.log(req.body)
@@ -63,11 +63,12 @@ router.post('/', async (req, res) => {
         });
         res.status(200).json(newProfile);
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
 
-
+// endSSSSSS M.
 
 // update profile
 router.put('/:id', async (req, res) => {
