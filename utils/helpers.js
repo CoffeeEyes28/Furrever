@@ -1,3 +1,5 @@
+const { ExpressHandlebars } = require("express-handlebars");
+
 module.exports = {
   format_date: (date) => {
     // Format date as MM/DD/YYYY
@@ -19,4 +21,15 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+
+  check_null: (value) =>{
+    if(value == null){
+      return null
+    }else{
+      return value;
+    }
+  }
 };
+
+
+

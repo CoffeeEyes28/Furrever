@@ -73,9 +73,21 @@
       </form>
     </section>
   </section>
+ 
   <section class="tile is-child has-background-white is-vertical is-1">
     <!-- don't delete for spacing issues using tiles -->
+   
   </section>
 </section>
-
+<section class="has-text-centered">
+  <p class="has-background-info-dark has-text-white px-5 py-5" id="caption" style="width:100%">
+          {{#if thisProfile.posts.length}}
+          {{#each thisProfile.posts as |posts|}}
+          {{>post-details}}
+          {{/each}}
+          {{else}}
+        <div></div>
+        {{/if}}
+        </p>
+        </section>
 <script src="/js/test_profile2.js"></script>
