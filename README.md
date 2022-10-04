@@ -79,7 +79,7 @@ Here is an example page for an animal up for adoption, with details related to s
 ## Deployed URL
 ---
 
-Click the dog [🐶]( <!-- Insert link here --> )  to see Furrever.
+Click the dog [🐶](https://media.tumblr.com/tumblr_m61e2zANA51qdq5iq.gif)  to see Furrever.
 
 
 ## Contributors
