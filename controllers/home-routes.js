@@ -51,9 +51,19 @@ router.get('/profile', async(req,res)=>{
     const loggedIn = req.session.logged_in
     const thisProfile = currentProfile.get({plain: true})
     console.log(thisProfile)
-    res.render('profile', {
-    thisProfile, 
-  loggedIn})
+
+    
+    const findProfile = await Profile.findOne({where: {user_id: req.session.user_id}})
+    if(!findProfile) {
+      res.redirect('/create')
+    }else {
+
+      res.render('profile', {
+        thisProfile, 
+        loggedIn})
+        
+      }
+    
 
   } catch (err) {
     res.status(500).json(err)
