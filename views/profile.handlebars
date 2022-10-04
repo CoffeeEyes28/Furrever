@@ -6,6 +6,13 @@
   <section class="tile is-parent  is-vertical is-2">
     <section class="tile is-child is-vertical has-text-centered">
       <br>
+      <div>
+        {{#if thisProfile.image.multimedia_url}}
+        <img src="../public/Assets/Sample1.jpg"/>
+        {{else}}
+        <img src="{{thisProfile.image.multimedia_url}}"
+        {{/if}}
+      </div>
       <section class="container">
         <h1 class="profile-name">{{thisProfile.profile.name}}</h1>
         <p>I am a: {{thisProfile.profile.animal_type}}</p>

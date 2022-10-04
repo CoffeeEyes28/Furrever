@@ -30,6 +30,9 @@ module.exports = {
     }
   }
 };
+// hbs.registerHelper('isNull', function (value){
+//   return value !== null;
+// });
 
 
 
