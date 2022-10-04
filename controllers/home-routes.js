@@ -85,21 +85,24 @@ router.get('/profile/:user_id', async (req, res) => {
     });
     const thisProfile = profile_postId.get({plain: true})
     const loggedIn = req.session.logged_in
-    const user = req.session.user_id 
+    const user = Number(req.session.user_id)
+    const param = Number(req.params.user_id)
+    console.log('param: ' ,req.params.user_id)
+    console.log(user)
 
-    if(req.params.user_id !== user){
+    if(user !== param){
       res.render('theirProfile', {
         thisProfile,
         loggedIn,
-        user
+        
       })
     }else{
    res.render('profile',{
     thisProfile,
     loggedIn,
-    user,
+  
    
-   })
+   });
   }
   
   } catch (err) {
