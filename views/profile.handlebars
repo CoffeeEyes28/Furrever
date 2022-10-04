@@ -7,11 +7,13 @@
     <section class="tile is-child is-vertical has-text-centered">
       <br>
       <div>
-        {{#if thisProfile.image.multimedia_url}}
-        <img src="../public/Assets/Sample1.jpg"/>
-        {{else}}
+        
+        {{#unless thisProfile.image.multimedia_url }}
+        <img src="/Assets/Sample1.jpg"/>
+        {{/unless}}
+        
         <img src="{{thisProfile.image.multimedia_url}}"
-        {{/if}}
+        
       </div>
       <section class="container">
         <h1 class="profile-name">{{thisProfile.profile.name}}</h1>
