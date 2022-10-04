@@ -6,6 +6,15 @@
   <section class="tile is-parent  is-vertical is-2">
     <section class="tile is-child is-vertical has-text-centered">
       <br>
+      <div>
+        
+        {{#unless thisProfile.image.multimedia_url }}
+        <img src="/Assets/Sample1.jpg"/>
+        {{/unless}}
+        
+        <img src="{{thisProfile.image.multimedia_url}}"
+        
+      </div>
       <section class="container">
         <h1 class="profile-name">{{thisProfile.profile.name}}</h1>
         <p>I am a: {{thisProfile.profile.animal_type}}</p>
@@ -73,9 +82,21 @@
       </form>
     </section>
   </section>
+ 
   <section class="tile is-child has-background-white is-vertical is-1">
     <!-- don't delete for spacing issues using tiles -->
+   
   </section>
 </section>
-
+<section class="has-text-centered">
+  <p class="has-background-info-dark has-text-white px-5 py-5" id="caption" style="width:100%">
+          {{#if thisProfile.posts.length}}
+          {{#each thisProfile.posts as |posts|}}
+          {{>post-details}}
+          {{/each}}
+          {{else}}
+        <div></div>
+        {{/if}}
+        </p>
+        </section>
 <script src="/js/test_profile2.js"></script>
