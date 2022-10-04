@@ -30,6 +30,7 @@ router.get('/', async (req, res) => {
     });
     const profiles = animal_profiles.map((profile)=> profile.get({plain:true}))
     // console.log(profiles)
+  
    const loggedIn = req.session.logged_in
     // res.status(200).json(animal_profiles);
     res.render('home', {

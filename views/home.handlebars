@@ -1,6 +1,7 @@
 
     <section class="section">
         {{#each profiles as |profile| }}
+        {{#if profile.profile}}
         <div class="container has-text-centered">
             <div class="tile is-ancestor">
                 <div class="tile is-parent">
@@ -16,6 +17,8 @@
                           </figure>
                     </article>
          </div>
+         {{/if}}
          {{/each}}
+         
     </section>
                
