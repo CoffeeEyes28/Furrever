@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Users, Profile } = require('../../models');
 
-router.post('/', async (req,res) => {
+router.post('/', async (req, res) => {
     try {
         const userData = await Users.create({
             username: req.body.username,
@@ -20,20 +20,21 @@ router.post('/', async (req,res) => {
     }
 });
 
-router.post('/login', async (req,res) => {
+router.post('/login', async (req, res) => {
     try {
         const userData = await Users.findOne({where: {email: req.body.email} });
         if(!userData){
             res.status(400)
-            .json({message: 'Incorrect username or password, please try again'});
+                .json({ message: 'Incorrect username or password, please try again' });
             return;
         }
 
         const validPassword = await userData.checkPassword(req.body.password);
-        
-        if(!validPassword){
+        console.log('validPassword')
+
+        if (!validPassword) {
             res.status(400)
-            .json({message: "Incorrect email or password, please try again"});
+                .json({ message: "Incorrect email or password, please try again" });
             return;
         }
         req.session.save(() => {
@@ -63,11 +64,11 @@ router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();
-      });
+        });
     } else {
-      res.status(404).end();
+        res.status(404).end();
     }
-  });
+});
 
 
 
