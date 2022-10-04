@@ -17,3 +17,5 @@ login.addEventListener('click',function(){
     window.location = '/login';
 })
 
+
+
