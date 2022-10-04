@@ -15,6 +15,7 @@
     <figure>
         <img src="/Assets/banner.jpg" alt="banner" width="100%"> </figure> </div>
         <div class="card-content is-overlay">
+<<<<<<< HEAD
             <span class="navbar-burger burger" data-target="navbarMenu">
                 <span></span>
                 <span></span>
@@ -47,6 +48,18 @@
                     </span>
                     {{/if}}
                  
+=======
+        <div class="navbar-end">
+            <button id="home" class="button has-background-grey has-text-white">Home</button> 
+            <button id="profile" class="button has-background-grey has-text-white">Profile</button>
+         
+            {{#if loggedIn}}
+            
+            <button id="logout" class="button has-text-white has-background-info">Logout</button>
+            {{else}}
+               <button id="login"class="button has-text-white has-background-info">Log In / Sign UP</button> 
+            {{/if}}
+>>>>>>> main
         </div>
 </div>
 </div>
