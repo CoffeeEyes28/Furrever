@@ -8,26 +8,26 @@ const { CloudinaryStorage } = require("multer-storage-cloudinary");
 require('dotenv').config()
 
 cloudinary.config({
-cloud_name: process.env.CLOUD_NAME,
-api_key: process.env.API_KEY,
-api_secret: process.env.API_SECRET
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
 });
 
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-    folder: "images",
-    format: 'png',
-    allowedFormats: ["jpg", "png"],
-    transformation: [{ width: 500, height: 500, crop: "limit" }]
+        folder: "images",
+        format: 'png',
+        allowedFormats: ["jpg", "png"],
+        transformation: [{ width: 500, height: 500, crop: "limit" }]
     },
 });
 
 const parser = multer({ storage: storage });
 
 
-router.post('/', parser.single('image'), async (req,res) => {
-    
+router.post('/', parser.single('image'), async (req, res) => {
+
     try {
         const findImage = await Image.findOne({
             where: {user_id: req.session.user_id}
@@ -57,8 +57,8 @@ router.post('/', parser.single('image'), async (req,res) => {
     } catch (error) {
         res.status(500).json(error)
     }
-    
-    
+
+
 });
 
 
