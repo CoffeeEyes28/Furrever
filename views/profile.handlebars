@@ -46,7 +46,7 @@
       </section>
     </section>
     <form id="profilePicture">
-      <input id ="picture" type="file" name="image" />
+      <input id="picture" type="file" name="image" />
       <button type="submit">Upload</button>
     </form>
   </section>
@@ -64,7 +64,14 @@
         <button class="button has-background-grey-light has-text-white" id="create_feed" style="width:100%"
           type="submit"><strong>I'm ready to update my status</strong></button>
         <br><br>
-        <p class="has-background-info-dark has-text-white px-5 py-5" id="caption" style="width:100%"></p>
+
+        <p class="has-background-info-dark has-text-white px-5 py-5" id="caption" style="width:100%">
+          {{#if thisProfile.posts.length}}
+          {{>post-details}}
+          {{else}}
+        <div></div>
+        {{/if}}
+        </p>
       </form>
     </section>
   </section>

@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
             res.json({user: userData, message: "You are now logged in!"})
         })
 
-        //check profile table , find any profiles id with the same user_id, if that is true redirect to dashboard, if false redirect profile page to create one
+        // check profile table , find any profiles id with the same user_id, if that is true redirect to dashboard, if false redirect profile page to create one
         // const profileData = await Profile.findAll({where: {user_id: userData.id }});
         // if(!profileData){
         //     res.render('profile', req.session.logged_in)
