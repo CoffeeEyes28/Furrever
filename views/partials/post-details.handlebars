@@ -1,11 +1,16 @@
-<section class="has-background-info-dark">
+<section class="has-background-info-dark has-text-white py-2 px-2">
     
-    {{#if check_null}}
-    <p>{{caption}}</p>
-    {{else}}
+   
+    
+    {{#if media}}
+    <div class="box">
     <img src="{{media}}"/>
     <p>{{caption}}</p>
+    </div>
+    {{else}}
+    <div class="box py-4">
+    <p>{{caption}}</p>
+    </div>
     {{/if}}
-    
 </section>
 
