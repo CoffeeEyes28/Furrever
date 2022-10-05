@@ -5,44 +5,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello Furrever Family and Friends!</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="../public/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
-  <!-- Our Banner to be inserted in main handle bar and below is sample only-->
-  <section class="hero">
-    <img src="../Assets/banner.jpg" alt="banner" width="100%">
-    <!-- <div class="hero-body"> -->
-    </div>
-  </section>
   <!-- NavBar to be inserted in main handle bar-->
   <!-- Bulma's neat nested table method-->
   <section class="tile is-ancestor">
     <section class="tile is-parent has-background-white is-vertical is-1">
       <!-- don't delete for spacing issues using tiles -->
-   </section>
+    </section>
     <!-- this is the image and rendered profile section -->
     <section class="tile is-parent  is-vertical is-2">
       <section class="tile is-child is-vertical has-text-centered">
         <br>
         <p class="title has-text-info-dark"><strong>This is my profile!</strong></p>
-        <img src="../Assets/Sample1.jpg" alt="Placeholder for pet">
+        <img src="../public/Assets/profile-photo-placeholder.png" alt="Placeholder for pet">
       </section>
     </section>
     <section class="tile is-parent has-background-white is-vertical is-1">
-       <!-- don't delete for spacing issues using tiles -->
+      <!-- don't delete for spacing issues using tiles -->
     </section>
     <!-- this is the feed display area -->
-    <section class="tile is-parent has-background-light is-vertical is-7 px-5 py-5">
+    <section class="tile is-parent notification has-text-centered is-vertical is-7 px-5 py-5">
       <section class="tile is-child is-vertical">
         <!-- this is where the main feeds are! -->
         <form id="feed">
+          <input type="file" id="photo_feed" name="photo_feed" accept="">
           <label for="new_feed" class="label is-medium"></label>
-          <textarea id="new_feed" name="new_feed" rows = "5" style="width:100%">This is where the furrever friend/family posts</textarea><br>
+          <textarea id="new_feed" name="new_feed" rows="5" style="width:100%">This is where the furrever friend/family posts</textarea><br>
           <button class="button has-background-grey-light has-text-white" id="create_feed" style="width:100%" type="submit"><strong>I'm ready to update my status</strong></button>
           <br><br>
-          <p class="has-background-info-dark has-text-white px-5 py-5" id="caption" style="width:100%"></p>
+          <img src="../public/Assets/status-photo-placeholder.png" alt="Placeholder for pet" id="media">
+          <p class="has-background-grey has-text-white px-5 py-5" id="caption" style="width:100%"></p>
         </form>
       </section>
     </section>
@@ -50,7 +46,7 @@
       <!-- don't delete for spacing issues using tiles -->
     </section>
   </section>
- 
+
   <script src="../public/js/test_profile2.js"></script>
 </body>
 
