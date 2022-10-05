@@ -24,12 +24,13 @@
                         </a>
                     </span>
                     </div>
+                    {{#if loggedIn}}
                     <span class="navbar-item">
                         <a id="profile" class="button has-background-grey has-text-white" href="#">
                             <span>Profile</span>
                         </a>
                     </span>
-                    {{#if loggedIn}}
+                    
                     <span class="navbar-item">
                         <a id="logout" class="button has-text-white has-background-info" href="#">
                             <span>Log Out</span>
@@ -61,7 +62,8 @@
     </main>
      <script src="/js/homepage.js"></script>
     <script src="/js/index.js"></script>
+    {{#if loggedIn}}
     <script src="/js/logout.js"></script>
-   
+   {{/if}}
 
 </body>

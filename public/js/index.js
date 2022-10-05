@@ -9,9 +9,7 @@ home.addEventListener('click', function (){
     window.location = '/';
 })
 
-profile.addEventListener('click', function(){
-    window.location = '/profile';
-})
+
 
 login.addEventListener('click',function(){
     window.location = '/login';
