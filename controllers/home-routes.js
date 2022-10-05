@@ -85,14 +85,6 @@ router.get('/profile/:user_id', async (req, res) => {
     });
     const thisProfile = profile_postId.get({plain: true})
     const loggedIn = req.session.logged_in
-<<<<<<< HEAD
-    const user = req.session.user_id
-   res.render('profile',{
-    thisProfile,
-    loggedIn,
-    user
-   })
-=======
     const user = Number(req.session.user_id)
     const param = Number(req.params.user_id)
     console.log('param: ' ,req.params.user_id)
@@ -113,7 +105,6 @@ router.get('/profile/:user_id', async (req, res) => {
    });
   }
   
->>>>>>> main
   } catch (err) {
     res.status(400).json(err); 
   }
