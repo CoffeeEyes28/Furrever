@@ -50,6 +50,7 @@ router.get('/profile', async(req,res)=>{
       include: [{model: Profile}, {model: Post}, {model: Image}],
     });
     const loggedIn = req.session.logged_in
+    const user = req.session.user_id
     const thisProfile = currentProfile.get({plain: true})
     console.log(thisProfile)
 
@@ -61,7 +62,8 @@ router.get('/profile', async(req,res)=>{
 
       res.render('profile', {
         thisProfile, 
-        loggedIn})
+        loggedIn,
+      user})
         
       }
     
@@ -81,9 +83,11 @@ router.get('/profile/:user_id', async (req, res) => {
     });
     const thisProfile = profile_postId.get({plain: true})
     const loggedIn = req.session.logged_in
+    const user = req.session.user_id
    res.render('profile',{
     thisProfile,
-    loggedIn
+    loggedIn,
+    user
    })
   } catch (err) {
     res.status(400).json(err); 
