@@ -68,17 +68,23 @@
   <section class="tile is-parent is-parent has-background-light is-vertical is-8">
     <section class="tile is-child is-vertical">
       <!-- this is where the main feeds are! -->
-      <form id="photo">
+      <button class="button"id="picBtn"><span class="icon">
+  <i class="fa-solid fa-image"></i>
+</span></button>
+      <form class="is-hidden"id="photo">
         <label for="new_feed" class="label is-medium"></label>
         <input id="feedpic" type="file" name="image">
-        <input id="photoCaption" type="text" name="caption"><br>
+        <input id="photoCaption" type="text" placeholder="Caption your photo!" name="caption" style="width:40%"><br>
         <button id="create_feed" type="submit">Submit</button>
         <br><br>
         
       </form>
         <br>
-      <form id="textPost">
-        <input id="feedText" type="text" name="caption">
+        <button class="button"id ='textBtn'><span class="icon">
+ <i class="fa-regular fa-keyboard"></i>
+</span></button>
+      <form class="is-hidden"id="textPost">
+        <input id="feedText" type="text"  name="caption" style="width:50%">
         <button type="submit">Submit</button>
       </form>
       
