@@ -12,7 +12,15 @@
         
         <img src="{{thisProfile.image.multimedia_url}}"/>
         
+        
       </div>
+      <section class="has-text-centered">
+    <form id="profilePicture">
+      <input id ="picture" type="file" name="image" />
+      <button type="submit">Upload</button>
+    </form>
+    </section>
+    <br>
       <section class="container">
         <p class="title profile-name has-text-info-dark is-1">{{thisProfile.profile.name}}</h1>
         <p><span class="has-text-grey-dark has-text-weight-normal">I am a:</span> {{thisProfile.profile.animal_type}}</p>
@@ -54,10 +62,6 @@
     </section>
 
 
-    <form id="profilePicture">
-      <input id ="picture" type="file" name="image" />
-      <button type="submit">Upload</button>
-    </form>
   </section>
 
   <!-- this is the feed display area -->
