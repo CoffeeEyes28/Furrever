@@ -30,6 +30,7 @@ router.get('/', async (req, res) => {
     });
     const profiles = animal_profiles.map((profile)=> profile.get({plain:true}))
     // console.log(profiles)
+  
    const loggedIn = req.session.logged_in
     // res.status(200).json(animal_profiles);
     res.render('home', {
@@ -49,11 +50,25 @@ router.get('/profile', async(req,res)=>{
       include: [{model: Profile}, {model: Post}, {model: Image}],
     });
     const loggedIn = req.session.logged_in
+    const user = req.session.user_id
     const thisProfile = currentProfile.get({plain: true})
     console.log(thisProfile)
-    res.render('profile', {
-    thisProfile, 
-  loggedIn})
+
+    
+    
+    const findProfile = await Profile.findOne({where: {user_id: req.session.user_id}})
+    if(!findProfile) {
+      res.redirect('/create')
+    }else {
+
+      res.render('profile', {
+        thisProfile, 
+        loggedIn,
+      user,
+    })
+        
+      }
+    
 
   } catch (err) {
     res.status(500).json(err)
@@ -70,10 +85,26 @@ router.get('/profile/:user_id', async (req, res) => {
     });
     const thisProfile = profile_postId.get({plain: true})
     const loggedIn = req.session.logged_in
+    const user = Number(req.session.user_id)
+    const param = Number(req.params.user_id)
+    console.log('param: ' ,req.params.user_id)
+    console.log(user)
+
+    if(user !== param){
+      res.render('theirProfile', {
+        thisProfile,
+        loggedIn,
+        
+      })
+    }else{
    res.render('profile',{
     thisProfile,
-    loggedIn
-   })
+    loggedIn,
+  
+   
+   });
+  }
+  
   } catch (err) {
     res.status(400).json(err); 
   }
