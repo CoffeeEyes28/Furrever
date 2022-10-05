@@ -1,9 +1,4 @@
-body {
-  background-image: url('/Assets/background1.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;  
-  background-size: cover;
-}
+
 
 .container {
     position: relative;
