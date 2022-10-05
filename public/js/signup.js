@@ -1,3 +1,5 @@
+
+
 const signupFormHandler = async (event) => {
     event.preventDefault();
   
@@ -24,3 +26,11 @@ const signupFormHandler = async (event) => {
   document
     .querySelector('#signup-form')
     .addEventListener('submit', signupFormHandler);
+
+document.querySelector('#loginPage').addEventListener('click', function(){
+window.location = '/login'
+});
+
+document.querySelector('#goHome').addEventListener('click', function(){
+  window.location = '/'
+})

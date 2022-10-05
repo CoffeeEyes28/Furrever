@@ -1,90 +1,82 @@
 <section class="tile is-ancestor">
-  <section class="tile is-parent has-background-white is-vertical is-1">
-    <!-- don't delete for spacing issues using tiles -->
-  </section>
+
   <!-- this is the image and rendered profile section -->
-  <section class="tile is-parent  is-vertical is-2">
-    <section class="tile is-child is-vertical has-text-centered">
+  <section class="tile is-parent is-vertical is-4">
+    <section class="tile is-child is-vertical has-text-centered has-text-info-dark px-5 px-5 is-size-5 has-text-weight-semibold">
       <br>
+
       <div>
-        
+
         {{#unless thisProfile.image.multimedia_url }}
-        <img src="/Assets/Sample1.jpg"/>
+        <img src="/Assets/profile-photo-placeholder.png" />
         {{/unless}}
-        
-        <img src="{{thisProfile.image.multimedia_url}}"
-        
+
+        <img src="{{thisProfile.image.multimedia_url}}" />
+
       </div>
-      <section class="container">
-        <h1 class="profile-name">{{thisProfile.profile.name}}</h1>
-        <p>I am a: {{thisProfile.profile.animal_type}}</p>
-        <p>My age: {{thisProfile.profile.age}}</p>
-        <p>My breed/mix: {{thisProfile.profile.breed_mix}}</p>
-        <p>My personality quirks: {{thisProfile.profile.personality_quirks}}</p>
-        {{#if thisProfile.profile.dog}}
-        <p> I get along with dogs</p>
-        {{else}}
-        <p> Sorry, I don't get along with dogs</p>
-        {{/if}}
-        {{#if thisProfile.profile.cat}}
-        <p> I get along with cats</p>
-        {{else}}
-        <p> Sorry, I don't get along with cats</p>
-        {{/if}}
-        {{#if thisProfile.profile.kids}}
-        <p> I get along with kids</p>
-        {{else}}
-        <p> Sorry, I don't get along with kids</p>
-        {{/if}}
-        <p>My furrever friends/family members are called: {{thisProfile.profile.furry_family}}</p>
-        <p>Email address: {{thisProfile.profile.email}}</p>
-        <p>Fostered since: {{format_date thisProfile.profile.date_fostered}}</p>
-        {{#if thisProfile.profile.neutered_spayed}}
-        <p> I am neutered/spayed</p>
-        {{else}}
-        <p> Sorry, I'm not neutered/spayed</p>
-        {{/if}}
-        {{#if thisProfile.profile.vaxed}}
-        <p> I am vaxed</p>
-        {{else}}
-        <p> Sorry, I'm not vaxed</p>
-        {{/if}}
-        <p>My diet: {{thisProfile.profile.diet}}</p>
-        <p>I love to: {{thisProfile.profile.i_love}}</p>
-        <p>Which shelter told you about me? Url: {{thisProfile.profile.adopt_me_url}}</p>
-      </section>
+
+      <p class="title profile-name has-text-info-dark is-1">{{thisProfile.profile.name}}</p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">I am a:</span> {{thisProfile.profile.animal_type}}</p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">My age:</span> {{thisProfile.profile.age}}</p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">My breed/mix:</span> {{thisProfile.profile.breed_mix}}
+      </p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">My personality quirks:</span>
+        {{thisProfile.profile.personality_quirks}}</p>
+      {{#if thisProfile.profile.dog}}
+      <p>I get along with dogs.</p>
+      {{else}}
+      <p>Sorry, I don't get along with dogs.</p>
+      {{/if}}
+      {{#if thisProfile.profile.cat}}
+      <p>I get along with cats.</p>
+      {{else}}
+      <p>Sorry, I don't get along with cats.</p>
+      {{/if}}
+      {{#if thisProfile.profile.kids}}
+      <p>I get along with kids</p>
+      {{else}}
+      <p>Sorry, I don't get along with kids.</p>
+      {{/if}}
+      <p><span class="has-text-grey-dark has-text-weight-normal">My furrever friends/family members are called:</span>
+        {{thisProfile.profile.furry_family}}</p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">Email address:</span> <a href="mailto:{{thisProfile.profile.email}}">{{thisProfile.profile.email}}</a></p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">Fostered since:</span> {{format_date
+        thisProfile.profile.date_fostered}}</p>
+      {{#if thisProfile.profile.neutered_spayed}}
+      <p>I am neutered/spayed.</p>
+      {{else}}
+      {{/if}}
+      {{#if thisProfile.profile.vaxed}}
+      <p>I am vaccinated.</p>
+      {{else}}
+      <p><span class="has-text-grey-dark has-text-weight-normal">Sorry, I'm not vaccinated.</p>
+      {{/if}}
+      <p><span class="has-text-grey-dark has-text-weight-normal">My diet:</span> {{thisProfile.profile.diet}}</p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">I love to:</span> {{thisProfile.profile.i_love}}</p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">Which shelter told you about me?<br>Shelter URL:</span><a href="{{thisProfile.profile.adopt_me_url}}">
+        {{thisProfile.profile.adopt_me_url}}</a></p>
+
     </section>
-
-
-  
   </section>
- <section class="tile is-parent has-background-light is-vertical is-7 px-5 py-5">
+  <section class="tile is-parent  is-vertical is-8">
     <section class="tile is-child is-vertical">
       <!-- this is where the main feeds are! -->
-     
-  
-<section class="has-text-centered">
 
-          {{#if thisProfile.posts.length}}
-          {{#each thisProfile.posts as |posts|}}
-          {{>post-details}}
-          {{/each}}
-          {{else}}
+
+      <section class="has-text-centered has-text-info-dark px-5 px-5 is-size-2 has-text-weight-semibold">
+        <br><br>
+        {{#if thisProfile.posts.length}}
+        {{#each thisProfile.posts as |posts|}}
+        {{>their-post-details}}
+        {{/each}}
+        {{else}}
         <div></div>
         {{/if}}
-        </p>
-        </section>
+      </section>
 
-
-
-    
     </section>
   </section>
- 
-  <section class="tile is-child has-background-white is-vertical is-1">
-    <!-- don't delete for spacing issues using tiles -->
-   
-  </section>
+
 </section>
 
 <script src="/js/test_profile2.js"></script>

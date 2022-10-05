@@ -1,24 +1,35 @@
-
-    <section class="section">
-        {{#each profiles as |profile| }}
-        {{#if profile.profile}}
-        <div class="container has-text-centered">
-            <div class="tile is-ancestor">
-                <div class="tile is-parent">
-                    <article class="tile is-child box">
-                        <p class="title has-text-white has-background-link">{{profile.profile.name}}</p>
-                        <figure class="image is-128x128">
-                            <a href="/profile/{{profile.profile.user_id}}">
+<section class="section">
+    {{#each profiles as |profile| }}
+    {{#if profile.profile}}
+    <section class="container has-text-centered">
+        <section class="tile is-ancestor has-text-centered">
+            <section class="tile is-parent is-4">
+                {{!-- do not delete this section for proper spacing --}}
+            </section>
+            <section class="tile is-parent has-text-centered is-4">
+                <article class="tile is-child box has-notification has-text-centered">
+                    <section class="image has-text-centered" style="width:100%">
+                        <a href="/profile/{{profile.profile.user_id}}">
                             {{#unless profile.image.multimedia_url}}
+<<<<<<< HEAD
                             <img src="/Assets/Sample1.jpg/"
+=======
+                            <img src="/Assets/profile-photo-placeholder.png" />
+>>>>>>> main
                             {{/unless}}
-                            <img src="{{profile.image.multimedia_url}}"/>
-                            </a>
-                          </figure>
-                    </article>
-         </div>
-         {{/if}}
-         {{/each}}
-         
+                            <img src="{{profile.image.multimedia_url}}" />
+                        </a>
+                    </section>
+                    <p class="has-text-white has-text-info-dark py-2 has-text-weight-bold is-size-1 is-family-monospace">
+                        {{profile.profile.name}}
+                    </p>
+                </article>
+            </section>
+        </section>
+        <section class="tile is-parent is-4">
+                {{!-- do not delete this section for proper spacing --}}
+            </section>
     </section>
-               
+    {{/if}}
+    {{/each}}
+</section>

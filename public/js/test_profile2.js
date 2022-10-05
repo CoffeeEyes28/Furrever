@@ -14,6 +14,10 @@
 // });
 
 
+
+
+
+
 const uploadProfile = async (event) => {
     event.preventDefault();
    const image = document.querySelector('#picture')
@@ -93,3 +97,52 @@ document.getElementById('profilePicture').addEventListener('submit', uploadProfi
 document.getElementById('photo').addEventListener('submit', photoPost)
 
 document.getElementById('textPost').addEventListener('submit', textPost)
+
+
+
+const togglePicForm = function(){
+    const picForm = document.getElementById('photo')
+  if(picForm.className === "is-hidden"){
+    picForm.setAttribute('class', 'is-block');
+  }else{
+    picForm.setAttribute('class', 'is-hidden')
+  }
+}
+
+document.getElementById('picBtn').addEventListener('click', togglePicForm)
+
+const toggleTextForm = function(){
+    const textForm = document.getElementById('textPost')
+    if(textForm.className === 'is-hidden'){
+        textForm.setAttribute('class', 'is-block')
+    }else{
+        textForm.setAttribute('class', 'is-hidden')
+    }
+}
+
+document.getElementById('textBtn').addEventListener('click', toggleTextForm)
+
+
+
+
+const deletePost = async (event) => {
+    if(event.target.hasAttribute('data-id')){
+        const id = event.target.getAttribute('data-id')
+
+
+        const response = await fetch(`/api/posts/${id}`,{
+            method: 'DELETE',
+        });
+        if(response.ok){
+            window.location.replace('/profile')
+        }else{
+            alert('Failed to delete post')
+        }
+
+    }
+  
+}
+
+document.querySelector('.postFeed').addEventListener('click', deletePost)
+
+
