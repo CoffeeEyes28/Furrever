@@ -56,35 +56,15 @@
     </section>
 
 
-    <form id="profilePicture">
-      <input id ="picture" type="file" name="image" />
-      <button type="submit">Upload</button>
-    </form>
+  
   </section>
-  <section class="tile is-parent has-background-white is-vertical is-1">
-    <!-- don't delete for spacing issues using tiles -->
-  </section>
-  <!-- this is the feed display area -->
-  <section class="tile is-parent has-background-light is-vertical is-7 px-5 py-5">
+ <section class="tile is-parent has-background-light is-vertical is-7 px-5 py-5">
     <section class="tile is-child is-vertical">
       <!-- this is where the main feeds are! -->
-      <form id="photo">
-        <label for="new_feed" class="label is-medium"></label>
-        <input id="feedpic" type="file" name="image">
-        <input id="photoCaption" type="text" name="caption"><br>
-        <button class="button has-background-grey-light has-text-white" id="create_feed" style="width:100%"
-          type="submit"><strong>Submit</strong></button>
-        <br><br>
-        
-      </form>
-        <br>
-      <form id="textPost">
-        <input id="feedText" type="text" name="caption">
-        <button type="submit">Submit</button>
-      </form>
-      
+     
   
 <section class="has-text-centered">
+
           {{#if thisProfile.posts.length}}
           {{#each thisProfile.posts as |posts|}}
           {{>post-details}}
