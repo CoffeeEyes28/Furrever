@@ -7,9 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Hello Furrever Family and Friends!</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+      <link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+    body {
+  background-image: url('/Assets/background1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+  </style>
+
 </head>
   <div class="hero-head">
             <span class="navbar-burger burger" data-target="navbarMenu">
@@ -20,26 +29,26 @@
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
                     <span class="navbar-item">
-                        <a id="home" class="button has-background-grey has-text-white" href="#">
+                        <a id="home" class="button has-background-info has-text-white" href="#">
                             <span>Home</span>
                         </a>
                     </span>
                     </div>
                     {{#if loggedIn}}
                     <span class="navbar-item">
-                        <a id="profile" class="button has-background-grey has-text-white" href="#">
+                        <a id="profile" class="button has-background-info has-text-white" href="#">
                             <span>Profile</span>
                         </a>
                     </span>
                     
                     <span class="navbar-item">
-                        <a id="logout" class="button has-text-white has-background-info" href="#">
+                        <a id="logout" class="button has-text-white has-background-info-dark" href="#">
                             <span>Log Out</span>
                         </a>
                     </span>
                     {{else}}
                     <span class="navbar-item">
-                        <a id="login" class="button has-text-white has-background-info" href="#">
+                        <a id="login" class="button has-text-white has-background-info-dark" href="#">
                             <span>Log In</span>
                         </a>
                     </span>
@@ -54,6 +63,7 @@
 </div>
 </div>
 <body>
+
     {{!--  Our Banner to be inserted in main handle bar and below is sample only --}}
 
     <main>
@@ -67,5 +77,4 @@
     <script src="/js/logout.js"></script>
     <script src="https://kit.fontawesome.com/6309f980a9.js" crossorigin="anonymous"></script>
    {{/if}}
-
 </body>

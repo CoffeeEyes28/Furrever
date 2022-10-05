@@ -104,6 +104,7 @@
   
 <section class="has-text-centered has-text-info-dark px-5 px-5 is-size-2 has-text-weight-semibold">
         <br><br>
+        <div class="postFeed">
           {{#if thisProfile.posts.length}}
           {{#each thisProfile.posts as |posts|}}
           {{>post-details}}
@@ -111,6 +112,7 @@
           {{else}}
         <div></div>
         {{/if}}
+        </div>
         </section>
     </section>
   </section>
