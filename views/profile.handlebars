@@ -12,7 +12,15 @@
         
         <img src="{{thisProfile.image.multimedia_url}}"/>
         
+        
       </div>
+      <section class="has-text-centered">
+    <form id="profilePicture">
+      <input id ="picture" type="file" name="image" />
+      <button type="submit">Upload</button>
+    </form>
+    </section>
+    <br>
       <section class="container">
         <p class="title profile-name has-text-info-dark is-1">{{thisProfile.profile.name}}</h1>
         <p><span class="has-text-grey-dark has-text-weight-normal">I am a:</span> {{thisProfile.profile.animal_type}}</p>
@@ -35,7 +43,7 @@
         <p> Sorry, I don't get along with kids.</p>
         {{/if}}
         <p><span class="has-text-grey-dark has-text-weight-normal">My furrever friends/family members are called:</span> {{thisProfile.profile.furry_family}}</p>
-        <p><span class="has-text-grey-dark has-text-weight-normal">Email address:</span> {{thisProfile.profile.email}}</p>
+        <p><span class="has-text-grey-dark has-text-weight-normal">Email address:</span> <a href="mailto:{{thisProfile.profile.email}}">{{thisProfile.profile.email}}</a></p>
         <p><span class="has-text-grey-dark has-text-weight-normal">Fostered since:</span> {{format_date thisProfile.profile.date_fostered}}</p>
         {{#if thisProfile.profile.neutered_spayed}}
         <p>I am neutered/spayed.</p>
@@ -49,38 +57,54 @@
         {{/if}}
         <p><span class="has-text-grey-dark has-text-weight-normal">My diet:</span> {{thisProfile.profile.diet}}</p>
         <p><span class="has-text-grey-dark has-text-weight-normal">I love to:</span> {{thisProfile.profile.i_love}}</p>
-        <p><span class="has-text-grey-dark has-text-weight-normal">Which shelter told you about me?<br> Shelter URL:</span> {{thisProfile.profile.adopt_me_url}}</p>
+        <p><span class="has-text-grey-dark has-text-weight-normal">Which shelter told you about me?<br> Shelter URL:</span> <a href="{{thisProfile.profile.adopt_me_url}}">{{thisProfile.profile.adopt_me_url}}</a></p>
       </section>
     </section>
 
 
-    <form id="profilePicture">
-      <input id ="picture" type="file" name="image" />
-      <button type="submit">Upload</button>
-    </form>
   </section>
 
   <!-- this is the feed display area -->
-  <section class="tile is-parent is-parent has-background-light is-vertical is-8">
+  <section class="tile is-parent is-parent  is-vertical is-6">
     <section class="tile is-child is-vertical">
       <!-- this is where the main feeds are! -->
-      <form id="photo">
+      <div class="mx-5 my-5 has-text-weight-semibold has-text-centered">
+      <button class="button  is-large" id="picBtn" ><span class="icon">
+  <i class="fa-solid fa-image"></i>
+</span></button>
+<p >Upload Photo</p>
+
+      <form class="is-hidden"id="photo">
         <label for="new_feed" class="label is-medium"></label>
         <input id="feedpic" type="file" name="image">
-        <input id="photoCaption" type="text" name="caption"><br>
+        <input id="photoCaption" type="text" placeholder="Caption your photo!" name="caption" style="width:40%">
+        <br>
+        <br>
         <button id="create_feed" type="submit">Submit</button>
         <br><br>
         
       </form>
+      </div>
         <br>
-      <form id="textPost">
-        <input id="feedText" type="text" name="caption">
+        <div class="mx-5 my-5 has-text-weight-semibold has-text-centered">
+        <button class="button  is-large"id ='textBtn'><span class="icon">
+ <i class="fa-regular fa-keyboard"></i>
+</span></button>
+<p class="">How are you?</p>
+
+      <form class="is-hidden"id="textPost">
+        <input id="feedText" type="text"  name="caption" style="width:50%">
+        <br>
+        <br>
         <button type="submit">Submit</button>
       </form>
+      </div>
+      
       
   
 <section class="has-text-centered has-text-info-dark px-5 px-5 is-size-2 has-text-weight-semibold">
         <br><br>
+        
           {{#if thisProfile.posts.length}}
           {{#each thisProfile.posts as |posts|}}
           {{>post-details}}
@@ -88,6 +112,7 @@
           {{else}}
         <div></div>
         {{/if}}
+        
         </section>
     </section>
   </section>

@@ -39,7 +39,7 @@
       {{/if}}
       <p><span class="has-text-grey-dark has-text-weight-normal">My furrever friends/family members are called:</span>
         {{thisProfile.profile.furry_family}}</p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">Email address:</span> {{thisProfile.profile.email}}</p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">Email address:</span> <a href="mailto:{{thisProfile.profile.email}}">{{thisProfile.profile.email}}</a></p>
       <p><span class="has-text-grey-dark has-text-weight-normal">Fostered since:</span> {{format_date
         thisProfile.profile.date_fostered}}</p>
       {{#if thisProfile.profile.neutered_spayed}}
@@ -53,12 +53,12 @@
       {{/if}}
       <p><span class="has-text-grey-dark has-text-weight-normal">My diet:</span> {{thisProfile.profile.diet}}</p>
       <p><span class="has-text-grey-dark has-text-weight-normal">I love to:</span> {{thisProfile.profile.i_love}}</p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">Which shelter told you about me?<br>Shelter URL:</span>
-        {{thisProfile.profile.adopt_me_url}}</p>
+      <p><span class="has-text-grey-dark has-text-weight-normal">Which shelter told you about me?<br>Shelter URL:</span><a href="{{thisProfile.profile.adopt_me_url}}">
+        {{thisProfile.profile.adopt_me_url}}</a></p>
 
     </section>
   </section>
-  <section class="tile is-parent has-background-light is-vertical is-8">
+  <section class="tile is-parent  is-vertical is-8">
     <section class="tile is-child is-vertical">
       <!-- this is where the main feeds are! -->
 
@@ -67,7 +67,7 @@
         <br><br>
         {{#if thisProfile.posts.length}}
         {{#each thisProfile.posts as |posts|}}
-        {{>post-details}}
+        {{>their-post-details}}
         {{/each}}
         {{else}}
         <div></div>

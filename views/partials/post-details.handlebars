@@ -1,11 +1,27 @@
-<section>
+<section class="has-text-white py-2 px-2">
     
-    {{#if check_null}}
-    <p>{{caption}}</p>
-    {{else}}
+   
+    <div class="postFeed">
+     
+    {{#if media}}
+    <div class="card ">
+        <div class="card-image">
     <img src="{{media}}"/>
+    </div>
+    <div class="content">
     <p>{{caption}}</p>
+    </div>
+    <button id="deleteBtn" data-id="{{id}}"><span class="icon"><i class="fa-solid fa-trash"></i></span></button>
+   
+    </div>
+    {{else}}
+    <div class="box py-4">
+    <p>{{caption}}</p>
+    <button id="deleteBtn" data-id="{{id}}"><span class="icon"><i class="fa-solid fa-trash"></i></span></button>
+    </div>
     {{/if}}
-    
+   
+    </div>
 </section>
+
 
