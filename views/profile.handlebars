@@ -68,25 +68,38 @@
   <section class="tile is-parent is-parent has-background-light is-vertical is-8">
     <section class="tile is-child is-vertical">
       <!-- this is where the main feeds are! -->
-      <button class="button"id="picBtn"><span class="icon">
+      <div class="mx-6 my-2 has-text-weight-semibold has-text-centered">
+      <button class="button  is-large" id="picBtn" ><span class="icon">
   <i class="fa-solid fa-image"></i>
 </span></button>
+<p >Upload Photo</p>
+
       <form class="is-hidden"id="photo">
         <label for="new_feed" class="label is-medium"></label>
         <input id="feedpic" type="file" name="image">
-        <input id="photoCaption" type="text" placeholder="Caption your photo!" name="caption" style="width:40%"><br>
+        <input id="photoCaption" type="text" placeholder="Caption your photo!" name="caption" style="width:40%">
+        <br>
+        <br>
         <button id="create_feed" type="submit">Submit</button>
         <br><br>
         
       </form>
+      </div>
         <br>
-        <button class="button"id ='textBtn'><span class="icon">
+        <div class="mx-6 my-2 has-text-weight-semibold has-text-centered">
+        <button class="button  is-large"id ='textBtn'><span class="icon">
  <i class="fa-regular fa-keyboard"></i>
 </span></button>
+<p class="">How are you?</p>
+
       <form class="is-hidden"id="textPost">
         <input id="feedText" type="text"  name="caption" style="width:50%">
+        <br>
+        <br>
         <button type="submit">Submit</button>
       </form>
+      </div>
+      
       
   
 <section class="has-text-centered has-text-info-dark px-5 px-5 is-size-2 has-text-weight-semibold">
