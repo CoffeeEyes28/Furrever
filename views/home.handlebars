@@ -1,24 +1,21 @@
+<section class="section">
+    
+    <div class="tile is-ancestor">
+        <div class="tile is-5 is-parent mx-auto my-auto px-auto py-auto">
+          {{#each profiles as |profile| }}
+         {{#if profile.profile}}
+                <figure class="image is-128x128">
+                    <p class="title has-text-white has-background-info-dark has-text-centered">{{profile.profile.name}}</p>
+                    <a href="/profile/{{profile.profile.user_id}}">
+                        {{#unless profile.image.multimedia_url}}
+                        <img src="/Assets/profile-photo-placeholder.png" />
+                        {{/unless}}
+                        <img src="{{profile.image.multimedia_url}}" />
+                    </a>
+                </figure><br><br>
+        
 
-    <section class="section">
-        {{#each profiles as |profile| }}
-        {{#if profile.profile}}
-        <div class="container has-text-centered">
-            <div class="tile is-ancestor">
-                <div class="tile is-parent">
-                    <article class="tile is-child box">
-                        <p class="title has-text-white has-background-link">{{profile.profile.name}}</p>
-                        <figure class="image is-128x128">
-                            <a href="/profile/{{profile.profile.user_id}}">
-                            {{#unless profile.image.multimedia_url}}
-                            <img src="/Assets/Sample1.jpg"
-                            {{/unless}}
-                            <img src="{{profile.image.multimedia_url}}"/>
-                            </a>
-                          </figure>
-                    </article>
-         </div>
-         {{/if}}
-         {{/each}}
-         
-    </section>
-               
+            {{/if}}
+            {{/each}}
+    </div>
+</section>
