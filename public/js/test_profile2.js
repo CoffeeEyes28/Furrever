@@ -132,6 +132,7 @@ const deletePost = async (event) => {
 
         const response = await fetch(`/api/posts/${id}`,{
             method: 'DELETE',
+            headers: {'Content-Type': 'application/json'}
         });
         if(response.ok){
             window.location.replace('/profile')
