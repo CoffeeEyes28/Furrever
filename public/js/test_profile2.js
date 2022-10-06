@@ -144,6 +144,6 @@ const deletePost = async (event) => {
   
 }
 
-document.querySelector('#deleteBtn').addEventListener('click', deletePost)
+document.getElementById('deleteBtn').addEventListener('click', deletePost)
 
 
