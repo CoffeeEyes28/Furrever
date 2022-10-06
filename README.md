@@ -45,7 +45,7 @@ SO THAT I can find the animal I am looking for
 
 ## Screenshot of Home Page
 ---
-<img src="rip.bozo" alt="image machine broke"/>
+<img src="screenshots\FurreverHomepage.png" alt="image machine broke"/>
 
 ```md
 This is our home page for our app Furrever.
@@ -53,8 +53,8 @@ This is our home page for our app Furrever.
 
 ## Screenshot of Sign In and Sign Up Page
 ---
-<img src="rip.bozo" alt="image machine broke"/>
-
+<img src="screenshots\FurreverLoginpage.png" alt="image machine broke"/>
+<img src="screenshots\FurreverSignup.png"/>
 ```md
 Users can sign in or sign up for the app on this page.  By entering email information and password a user can make an account or sign into an existing account in order to contact foster homes.
 ```
@@ -62,7 +62,7 @@ Users can sign in or sign up for the app on this page.  By entering email inform
 
 ## Screenshot of Customize Page
 ---
-<img src="rip.bozo" alt="image machine broke"/>
+<img src="screenshots\FurreverCreatingProfile.png" alt="image machine broke"/>
 
 ```md
 Users can generate their own account for fostering animals, or for the animals they themselves are offering for adoption.
@@ -70,7 +70,7 @@ Users can generate their own account for fostering animals, or for the animals t
 
 ## Screenshot of Pet Profile Page
 
-<img src="rip.bozo" alt="image machine broke"/>
+<img src="screenshots\FurreverProfilepage.png" alt="image machine broke"/>
 
 ```md
 Here is an example page for an animal up for adoption, with details related to special needs or affinities.
