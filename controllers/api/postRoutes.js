@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const { Profile, Post, Users } = require("../../models");
 
+// Get all posts and JOIN with cloudinary data
 router.get("/", async (req, res) => {
   try {
     const postData = await Post.findAll();
@@ -37,9 +38,10 @@ const storage2 = new CloudinaryStorage({
 
 const parser = multer({storage: storage2});
 
-
+// Post route allows to create a post with image
 router.post("/photo", parser.single('image'), async (req, res) => {
   try {
+    // Find the logged in user based on the session ID
     const postData = await Post.create({
       media: req.file.path,
       caption: req.body.caption,
@@ -52,7 +54,7 @@ router.post("/photo", parser.single('image'), async (req, res) => {
   }
 });
 
-
+// Post route allows to create a post with text
 router.post("/text", async (req, res) => {
   try {
     const postData = await Post.create({
@@ -65,7 +67,7 @@ router.post("/text", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// Put route allows to update the post based on the user id
 router.put("/:id", async (req, res) => {
   Post.update(
     {
@@ -85,6 +87,7 @@ router.put("/:id", async (req, res) => {
     });
 });
 
+// Delete route allows to delete the post based on the user id
 router.delete("/:id", async (req, res) => {
   try {
     const postData = await Post.destroy({
