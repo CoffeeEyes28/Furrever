@@ -121,7 +121,7 @@ const deletePost = async (event) => {
             headers: {'Content-Type': 'application/json'}
         });
         if(response.ok){
-            window.location.replace('/profile')
+            window.location.reload()
         }else{
             alert('Failed to delete post')
         }
