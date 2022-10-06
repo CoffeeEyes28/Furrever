@@ -13,6 +13,19 @@
 //     console.log(posted_feed)
 // });
 
+
+// Element.setAttribute()
+// Sets the value of an attribute on the specified element. 
+// If the attribute already exists, the value is updated; 
+// otherwise a new attribute is added with the specified name and value.
+
+// A user can create and update the feed of the animal;
+// A user can upload an image and create a caption for the image;
+// A user can create a post with text;
+// A user can delete an image and the caption;
+// A user can delete a post with text;
+// The forms are hidden and appear upon clicking.
+
 const togglePicForm = function(){
     const picForm = document.getElementById('photo')
   if(picForm.className === "is-hidden"){
