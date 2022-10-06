@@ -62,7 +62,7 @@ Users can sign in or sign up for the app on this page.  By entering email inform
 
 ## Screenshot of Customize Page
 ---
-<img src="rip.bozo" alt="image machine broke"/>
+<img src="screenshots\FurreverCreatingProfile.png" alt="image machine broke"/>
 
 ```md
 Users can generate their own account for fostering animals, or for the animals they themselves are offering for adoption.
@@ -70,7 +70,7 @@ Users can generate their own account for fostering animals, or for the animals t
 
 ## Screenshot of Pet Profile Page
 
-<img src="rip.bozo" alt="image machine broke"/>
+<img src="screenshots\FurreverProfilepage.png" alt="image machine broke"/>
 
 ```md
 Here is an example page for an animal up for adoption, with details related to special needs or affinities.
