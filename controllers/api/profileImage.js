@@ -25,7 +25,7 @@ const storage = new CloudinaryStorage({
 
 const parser = multer({ storage: storage });
 
-
+// Post route allows to create and update a profile with an image using the session ID
 router.post('/', parser.single('image'), async (req,res) => {
     
     try {
