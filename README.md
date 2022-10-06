@@ -81,7 +81,7 @@ Here is an example page for an animal up for adoption, with details related to s
 ## Deployed URL
 ---
 
-Click the dog [🐶](https://dashboard.heroku.com/apps/enigmatic-gorge-61389)  to see Furrever.
+Click the dog [🐶](https://enigmatic-gorge-61389.herokuapp.com/)  to see Furrever.
 
 
 ## Contributors
