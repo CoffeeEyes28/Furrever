@@ -143,6 +143,6 @@ const deletePost = async (event) => {
   
 }
 
-document.querySelector('.postFeed').addEventListener('click', deletePost)
+document.querySelector('#trash').addEventListener('click', deletePost)
 
 
