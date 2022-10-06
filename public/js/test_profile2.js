@@ -111,7 +111,7 @@ if(texting){
 }
 }
 const deletePost = async (event) => {
-    event.stopPropagation();
+    
     if(event.target.hasAttribute('data-id')){
         const id = event.target.getAttribute('data-id')
 
