@@ -8,58 +8,12 @@
       <div>
 
         {{#unless thisProfile.image.multimedia_url }}
-<<<<<<< HEAD
-        <img src="/Assets/Sample1.jpg" />
-        {{/unless}}
-
-        <img src="{{thisProfile.image.multimedia_url}}" </div>
-        <section class="container">
-          <h1 class="profile-name">{{thisProfile.profile.name}}</h1>
-          <p>I am a: {{thisProfile.profile.animal_type}}</p>
-          <p>My age: {{thisProfile.profile.age}}</p>
-          <p>My breed/mix: {{thisProfile.profile.breed_mix}}</p>
-          <p>My personality quirks: {{thisProfile.profile.personality_quirks}}</p>
-          {{#if thisProfile.profile.dog}}
-          <p> I get along with dogs</p>
-          {{else}}
-          <p> Sorry, I don't get along with dogs</p>
-          {{/if}}
-          {{#if thisProfile.profile.cat}}
-          <p> I get along with cats</p>
-          {{else}}
-          <p> Sorry, I don't get along with cats</p>
-          {{/if}}
-          {{#if thisProfile.profile.kids}}
-          <p> I get along with kids</p>
-          {{else}}
-          <p> Sorry, I don't get along with kids</p>
-          {{/if}}
-          <p>My furrever friends/family members are called: {{thisProfile.profile.furry_family}}</p>
-          <p>Email address: {{thisProfile.profile.email}}</p>
-          <p>Fostered since: {{format_date thisProfile.profile.date_fostered}}</p>
-          {{#if thisProfile.profile.neutered_spayed}}
-          <p> I am neutered/spayed</p>
-          {{else}}
-          <p> Sorry, I'm not neutered/spayed</p>
-          {{/if}}
-          {{#if thisProfile.profile.vaxed}}
-          <p> I am vaxed</p>
-          {{else}}
-          <p> Sorry, I'm not vaxed</p>
-          {{/if}}
-          <p>My diet: {{thisProfile.profile.diet}}</p>
-          <p>I love to: {{thisProfile.profile.i_love}}</p>
-          <p>Which shelter told you about me? Url: {{thisProfile.profile.adopt_me_url}}</p>
-        </section>
-    </section>
-=======
         <img src="/Assets/profile-photo-placeholder.png" />
         {{/unless}}
 
         <img src="{{thisProfile.image.multimedia_url}}" />
 
       </div>
->>>>>>> main
 
       <p class="title profile-name has-text-info-dark is-1">{{thisProfile.profile.name}}</p>
       <p><span class="has-text-grey-dark has-text-weight-normal">I am a:</span> {{thisProfile.profile.animal_type}}</p>
