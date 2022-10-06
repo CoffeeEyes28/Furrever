@@ -7,7 +7,7 @@
                 {{!-- do not delete this section for proper spacing --}}
             </section>
             <section class="tile is-parent has-text-centered is-4">
-                <article class="tile is-child box has-notification has-text-centered">
+                <article class="tile is-child box has-text-centered">
                     <section class="image has-text-centered" style="width:100%">
                         <a href="/profile/{{profile.profile.user_id}}">
                             {{#unless profile.image.multimedia_url}}
@@ -16,7 +16,7 @@
                             <img src="{{profile.image.multimedia_url}}" />
                         </a>
                     </section>
-                    <p class="has-text-white has-text-info-dark py-2 has-text-weight-bold is-size-1 is-family-monospace">
+                    <p class="has-text-info-dark py-2 has-text-weight-bold is-size-1 is-family-monospace">
                         {{profile.profile.name}}
                     </p>
                 </article>

@@ -1,8 +1,9 @@
+
 <section class="tile is-ancestor">
 
   <!-- this is the image and rendered profile section -->
   <section class="tile is-parent is-vertical is-4">
-    <section class="tile is-child is-vertical has-text-centered has-text-info-dark px-5 px-5 is-size-5 has-text-weight-semibold">
+    <section class="tile is-child is-vertical has-text-centered has-text-link-dark px-5 px-5 is-size-5 has-text-weight-bold">
       <br>
 
       <div>
@@ -15,12 +16,12 @@
 
       </div>
 
-      <p class="title profile-name has-text-info-dark is-1">{{thisProfile.profile.name}}</p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">I am a:</span> {{thisProfile.profile.animal_type}}</p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">My age:</span> {{thisProfile.profile.age}}</p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">My breed/mix:</span> {{thisProfile.profile.breed_mix}}
+      <p class="title profile-name has-text-link-dark is-1 has-text-weight-bold">{{thisProfile.profile.name}}</p>
+      <p><span class="has-text-link-light has-text-weight-semibold">I am a:</span> {{thisProfile.profile.animal_type}}</p>
+      <p><span class="has-text-link-light has-text-weight-semibold">My age:</span> {{thisProfile.profile.age}}</p>
+      <p><span class="has-text-link-light has-text-weight-semibold">My breed/mix:</span> {{thisProfile.profile.breed_mix}}
       </p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">My personality quirks:</span>
+      <p><span class="has-text-link-light has-text-weight-semibold">My personality quirks:</span>
         {{thisProfile.profile.personality_quirks}}</p>
       {{#if thisProfile.profile.dog}}
       <p>I get along with dogs.</p>
@@ -37,10 +38,10 @@
       {{else}}
       <p>Sorry, I don't get along with kids.</p>
       {{/if}}
-      <p><span class="has-text-grey-dark has-text-weight-normal">My furrever friends/family members are called:</span>
+      <p><span class="has-text-link-light has-text-weight-semibold">My furrever friends/family members are called:</span><br>
         {{thisProfile.profile.furry_family}}</p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">Email address:</span> <a href="mailto:{{thisProfile.profile.email}}">{{thisProfile.profile.email}}</a></p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">Fostered since:</span> {{format_date
+      <p><span class="has-text-link-light has-text-weight-semibold">Email address:</span> <a href="mailto:{{thisProfile.profile.email}}">{{thisProfile.profile.email}}</a></p>
+      <p><span class="has-text-link-light has-text-weight-semibold">Fostered since:</span> {{format_date
         thisProfile.profile.date_fostered}}</p>
       {{#if thisProfile.profile.neutered_spayed}}
       <p>I am neutered/spayed.</p>
@@ -49,11 +50,11 @@
       {{#if thisProfile.profile.vaxed}}
       <p>I am vaccinated.</p>
       {{else}}
-      <p><span class="has-text-grey-dark has-text-weight-normal">Sorry, I'm not vaccinated.</p>
+      <p><span class="has-text-link-light has-text-weight-semibold">Sorry, I'm not vaccinated.</p>
       {{/if}}
-      <p><span class="has-text-grey-dark has-text-weight-normal">My diet:</span> {{thisProfile.profile.diet}}</p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">I love to:</span> {{thisProfile.profile.i_love}}</p>
-      <p><span class="has-text-grey-dark has-text-weight-normal">Which shelter told you about me?<br>Shelter URL:</span><a href="{{thisProfile.profile.adopt_me_url}}">
+      <p><span class="has-text-link-light has-text-weight-semibold">My diet:</span> {{thisProfile.profile.diet}}</p>
+      <p><span class="has-text-link-light has-text-weight-semibold">I love to:</span> {{thisProfile.profile.i_love}}</p>
+      <p><span class="has-text-link-light has-text-weight-semibold">Which shelter told you about me?<br>Shelter URL:</span><a href="{{thisProfile.profile.adopt_me_url}}">
         {{thisProfile.profile.adopt_me_url}}</a></p>
 
     </section>
