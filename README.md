@@ -56,6 +56,7 @@ This is our home page for our app Furrever.
 <img src="screenshots\FurreverLoginpage.png" alt="image machine broke"/>
 <img src="screenshots\FurreverSignup.png"/>
 
+
 ```md
 Users can sign in or sign up for the app on this page.  By entering email information and password a user can make an account or sign into an existing account in order to contact foster homes.
 ```
