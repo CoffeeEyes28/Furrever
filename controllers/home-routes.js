@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Users, Profile, Post, Image } = require('../models');
 // const withAuth = require('../utils/auth');
 
+// Get route allows to search for a profile created by a user excluding certain fields
 router.get('/', async (req, res) => {
   console.log(req.session.logged_in)
   try {
@@ -43,6 +44,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Get route allows to find a user by the primary key and retreive the data from the Profile model, Post model, Image model, but excluding the password
 router.get('/profile', async(req,res)=>{
   try {
     const currentProfile = await Users.findByPk(req.session.user_id, {
@@ -58,9 +60,11 @@ router.get('/profile', async(req,res)=>{
     
     const findProfile = await Profile.findOne({where: {user_id: req.session.user_id}})
     if(!findProfile) {
+      // If the user does not have a profile then they will be redirected to create one
       res.redirect('/create')
     }else {
 
+      // If the user has a profile then it will be rendered
       res.render('profile', {
         thisProfile, 
         loggedIn,
@@ -77,7 +81,7 @@ router.get('/profile', async(req,res)=>{
 })
 
 
-// Working
+// Get route uses the profile id to render the profile of the user who is logged in
 router.get('/profile/:user_id', async (req, res) => {
   try {
     const profile_postId = await Users.findByPk(req.params.user_id, {
@@ -112,7 +116,7 @@ router.get('/profile/:user_id', async (req, res) => {
 });
 
 
-
+// Get route allows the logged in user to render their created profile based on session ID
 router.get('/create', (req, res) =>{
   console.log(req.session.user_id)
   try {
@@ -135,6 +139,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Or redirect to the signup page
 router.get('/signup', (req, res)=>{
   if(req.session.logged_in){
     res.redirect('/');

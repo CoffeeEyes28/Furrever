@@ -3,7 +3,7 @@ const { Profile, Users, Post, Image } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-// get all profiles
+// Get route gets all profiles
 router.get('/', async (req, res) => {
     // find all profiles
     try {
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// get one profile
+// Get route gets one profile using the profile id
 router.get('/:id', async (req, res) => {
     // find a single profile by its `id`
     try {
@@ -36,8 +36,7 @@ router.get('/:id', async (req, res) => {
 
 });
 
-// create new profile startSSSSS M.
-//need to still work on 
+// Post route allows the user to create new profile
 router.post('/', async (req, res) => {
     console.log(req.body)
     // create a new Profile
@@ -68,9 +67,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// endSSSSSS M.
-
-// update profile
+// Put route allows to update a profile using the id
 router.put('/:id', async (req, res) => {
     // update product data
     try{
@@ -90,7 +87,7 @@ router.put('/:id', async (req, res) => {
 });
 
 
-//delete profile
+//Delete route allows to delete a profile using the id
 router.delete('/:id', async (req, res) => {
     // delete one profile by its `id` value
     try {

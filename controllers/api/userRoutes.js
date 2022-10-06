@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Users, Profile } = require('../../models');
 
+// Post route allows to create a user 
 router.post('/', async (req,res) => {
     try {
         const userData = await Users.create({
@@ -10,6 +11,7 @@ router.post('/', async (req,res) => {
         });
 
         req.session.save(() => {
+            //Find the logged in user based on the session ID
             req.session.user_id = userData.id;
             req.session.logged_in = true;
 
@@ -20,6 +22,7 @@ router.post('/', async (req,res) => {
     }
 });
 
+// Post route allows user to login
 router.post('/login', async (req,res) => {
     try {
         const userData = await Users.findOne({where: {email: req.body.email} });
@@ -42,23 +45,12 @@ router.post('/login', async (req,res) => {
             res.json({user: userData, message: "You are now logged in!"})
         })
 
-        // check profile table , find any profiles id with the same user_id, if that is true redirect to dashboard, if false redirect profile page to create one
-        // const profileData = await Profile.findAll({where: {user_id: userData.id }});
-        // if(!profileData){
-        //     res.render('profile', req.session.logged_in)
-        // } else res.render('hometest', {
-        //     profileData,
-        //     logged_in: req.session.logged_in
-        // })
-
-
-
-      
     } catch (err) {
         res.status(400).json(err)
     }
 });
 
+// Post route allows user to logout and destroys the session ID
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
