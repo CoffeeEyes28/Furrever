@@ -13,7 +13,27 @@
 //     console.log(posted_feed)
 // });
 
+const togglePicForm = function(){
+    const picForm = document.getElementById('photo')
+  if(picForm.className === "is-hidden"){
+    picForm.setAttribute('class', 'is-block');
+  }else{
+    picForm.setAttribute('class', 'is-hidden')
+  }
+}
 
+document.getElementById('picBtn').addEventListener('click', togglePicForm)
+
+const toggleTextForm = function(){
+    const textForm = document.getElementById('textPost')
+    if(textForm.className === 'is-hidden'){
+        textForm.setAttribute('class', 'is-block')
+    }else{
+        textForm.setAttribute('class', 'is-hidden')
+    }
+}
+
+document.getElementById('textBtn').addEventListener('click', toggleTextForm)
 
 
 
@@ -90,41 +110,6 @@ if(texting){
     }
 }
 }
-
-
-document.getElementById('profilePicture').addEventListener('submit', uploadProfile)
-
-document.getElementById('photo').addEventListener('submit', photoPost)
-
-document.getElementById('textPost').addEventListener('submit', textPost)
-
-
-
-const togglePicForm = function(){
-    const picForm = document.getElementById('photo')
-  if(picForm.className === "is-hidden"){
-    picForm.setAttribute('class', 'is-block');
-  }else{
-    picForm.setAttribute('class', 'is-hidden')
-  }
-}
-
-document.getElementById('picBtn').addEventListener('click', togglePicForm)
-
-const toggleTextForm = function(){
-    const textForm = document.getElementById('textPost')
-    if(textForm.className === 'is-hidden'){
-        textForm.setAttribute('class', 'is-block')
-    }else{
-        textForm.setAttribute('class', 'is-hidden')
-    }
-}
-
-document.getElementById('textBtn').addEventListener('click', toggleTextForm)
-
-
-
-
 const deletePost = async (event) => {
     if(event.target.hasAttribute('data-id')){
         const id = event.target.getAttribute('data-id')
@@ -144,6 +129,24 @@ const deletePost = async (event) => {
   
 }
 
+
+
+
+document.getElementById('profilePicture').addEventListener('submit', uploadProfile)
+
+document.getElementById('photo').addEventListener('submit', photoPost)
+
+document.getElementById('textPost').addEventListener('submit', textPost)
+
 document.getElementById('deleteBtn').addEventListener('click', deletePost)
+
+
+
+
+
+
+
+
+
 
 
