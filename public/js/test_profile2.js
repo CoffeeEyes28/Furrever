@@ -111,7 +111,7 @@ if(texting){
 }
 }
 const deletePost = async (event) => {
-    
+    console.log('hello')
     if(event.target.hasAttribute('data-id')){
         const id = event.target.getAttribute('data-id')
 
@@ -139,7 +139,9 @@ document.getElementById('photo').addEventListener('submit', photoPost)
 
 document.getElementById('textPost').addEventListener('submit', textPost)
 
-document.getElementById('deleteBtn').addEventListener('click', deletePost)
+// document.querySelector('.deleteBtn').addEventListener('click', deletePost)
+document.querySelectorAll('.deleteBtn').forEach(button => 
+    button.addEventListener('click', deletePost))
 
 
 
