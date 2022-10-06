@@ -1,0 +1,20 @@
+<section class="has-text-white py-2 px-2">
+    
+   
+    <div class="postFeed">
+     
+    {{#if media}}
+    <div class="box py-3 has-background-success-light">
+    <img src="{{media}}"/>
+    <p>{{caption}}</p>
+
+   
+    </div>
+    {{else}}
+    <div class="box py-3 has-background-info-light">
+    <p>{{caption}}</p>
+    </div>
+    {{/if}}
+   
+    </div>
+</section>

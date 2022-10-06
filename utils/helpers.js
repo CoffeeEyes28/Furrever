@@ -23,10 +23,10 @@ module.exports = {
   },
 
   check_null: (value) =>{
-    if(value == null){
-      return null
+    if(value === null){
+      return true
     }else{
-      return value;
+      return false
     }
   },
  
